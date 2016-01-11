@@ -70,11 +70,15 @@ Ship1.prototype.update = function(shipType) {
     }
   }
 
+  this.ship.body.velocity.x = 0;
+  this.ship.body.velocity.y = 0;
+
   if (this.cursor.left) {
     this.ship.body.velocity.x = -200;
     this.currentDir = "left"
-    this.ship.animations.play('walk_left', 8, false, false);
+    this.ship.animations.play('walk_left', 8, false, false)
   }
+
   if (this.cursor.right) {
     this.ship.body.velocity.x = 200;
     this.currentDir = "right"
@@ -90,22 +94,41 @@ Ship1.prototype.update = function(shipType) {
     this.currentDir = "down"
     this.ship.animations.play('walk_down', 8, false, false);
   }
+  
+  var isRunning = (this.cursor.left || this.cursor.right || this.cursor.up || this.cursor.down || this.cursor.atack);
+  var isAttacking = true;
+
+  if (!isRunning) {
+    if (this.cursor.attack) {
+
+    } else if (!isAttacking){
+      this.ship.animations.stop();
+    }
+  }
 
   if (this.cursor.attack && this.currentDir === "left") {
+    isAttacking = true;
+    // if (isInRange)
     this.ship.animations.play('attack_left', 8, false, false).onComplete.add(function () {
-      console.log('animation complete');
+      isAttacking = false;
     }, this);
     // this.attack(this.ship, enemy)
   } else
   if (this.cursor.attack && this.currentDir === "right") {
-    this.ship.animations.play('attack_right', 8, false, false);
+    this.ship.animations.play('attack_right', 8, false, false).onComplete.add(function () {
+      isAttacking = false;
+    }, this);
   } else
   if (this.cursor.attack && this.currentDir === "up") {
-    this.ship.animations.play('attack_up', 8, false, false);
+    this.ship.animations.play('attack_up', 8, false, false).onComplete.add(function () {
+      isAttacking = false;
+    }, this);
   } else
   if (this.cursor.attack && this.currentDir === "down") {
     this.ship.scale.setTo(2, 2);
-    this.ship.animations.play('attack_down', 8, false, false);
+    this.ship.animations.play('attack_down', 8, false, false).onComplete.add(function () {
+      isAttacking = false;
+    }, this);
   }
 
   if (this.cursor.fire) {

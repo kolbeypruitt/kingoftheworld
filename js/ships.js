@@ -375,7 +375,17 @@ function update() {
 				var targetShip = shipsList[j].ship;
 				// Destroying ships on collision so collision detection not needed in this version
 				// game.physics.arcade.collide(curShip, targetShip);
-				game.physics.arcade.overlap(curBullets, targetShip, bulletHitPlayer, null, this);
+				if(game.physics.arcade.distanceBetween(curShip, targetShip) < 100) {
+					if (shipsList[i].input.attack) {
+						console.log('ouch!!!!');
+						setTimeout(function() {
+						  shipsList[i].health -= 5;
+						}, 1000)
+						console.log(shipsList[i].health);
+					}
+					// console.log(shipsList[j].health);
+				}
+				// game.physics.arcade.overlap(curBullets, targetShip, bulletHitPlayer, null, this);
 				game.physics.arcade.overlap(curShip, targetShip, shipsCollide, null, this);
 
 			}
@@ -386,65 +396,65 @@ function update() {
 	}
 }
 
-function bulletHitPlayer(ship, bullet) {
-	bullet.kill();
+// function bulletHitPlayer(ship, bullet) {
+// 	bullet.kill();
 
-	switch (bullet.key) {
-		case "bullet1":
-			shipsList[ship.id].health -= 10
-			game.add.audio('hit1').play('', 0, .3)
-			if (ship.h) {
-				ship.h.destroy()
-				var health = "Health: " + player.health;
-				var style = {
-					font: "16px Arial",
-					fill: "#ddd"
-				};
-				ship.h = game.add.text(10, 20, health, style);
-				ship.h.fixedToCamera = true;
-			}
-			break;
-		case "bullet2":
-			shipsList[ship.id].health -= 2
-			game.add.audio('hit2').play('', 0, .5)
-			if (ship.h) {
-				ship.h.destroy()
-				var health = "Health: " + player.health;
-				var style = {
-					font: "16px Arial",
-					fill: "#ddd"
-				};
-				ship.h = game.add.text(10, 20, health, style);
-				ship.h.fixedToCamera = true;
-			}
-			break;
-		case "bullet3":
-			shipsList[ship.id].health -= 20
-			game.add.audio('hit3').play()
-			if (ship.h) {
-				ship.h.destroy()
-				var health = "Health: " + player.health;
-				var style = {
-					font: "16px Arial",
-					fill: "#ddd"
-				};
-				ship.h = game.add.text(10, 20, health, style);
-				ship.h.fixedToCamera = true;
-			}
-			break;
-	}
+// 	switch (bullet.key) {
+// 		case "bullet1":
+// 			shipsList[ship.id].health -= 10
+// 			game.add.audio('hit1').play('', 0, .3)
+// 			if (ship.h) {
+// 				ship.h.destroy()
+// 				var health = "Health: " + player.health;
+// 				var style = {
+// 					font: "16px Arial",
+// 					fill: "#ddd"
+// 				};
+// 				ship.h = game.add.text(10, 20, health, style);
+// 				ship.h.fixedToCamera = true;
+// 			}
+// 			break;
+// 		case "bullet2":
+// 			shipsList[ship.id].health -= 2
+// 			game.add.audio('hit2').play('', 0, .5)
+// 			if (ship.h) {
+// 				ship.h.destroy()
+// 				var health = "Health: " + player.health;
+// 				var style = {
+// 					font: "16px Arial",
+// 					fill: "#ddd"
+// 				};
+// 				ship.h = game.add.text(10, 20, health, style);
+// 				ship.h.fixedToCamera = true;
+// 			}
+// 			break;
+// 		case "bullet3":
+// 			shipsList[ship.id].health -= 20
+// 			game.add.audio('hit3').play()
+// 			if (ship.h) {
+// 				ship.h.destroy()
+// 				var health = "Health: " + player.health;
+// 				var style = {
+// 					font: "16px Arial",
+// 					fill: "#ddd"
+// 				};
+// 				ship.h = game.add.text(10, 20, health, style);
+// 				ship.h.fixedToCamera = true;
+// 			}
+// 			break;
+// 	}
 
-	if (shipsList[ship.id].health <= 0) {
-		var explosionAnimation = explosions.getFirstExists(false);
-		explosionAnimation.reset(ship.x, ship.y);
-		explosionAnimation.play('kaboom', 30, false, true);
-		setTimeout(function() {
-			eurecaServer.deletePlayer(ship.id)
-		}, 40)
-		game.add.audio('shipdies').play('', 0, .7)
-	}
+// 	if (shipsList[ship.id].health <= 0) {
+// 		var explosionAnimation = explosions.getFirstExists(false);
+// 		explosionAnimation.reset(ship.x, ship.y);
+// 		explosionAnimation.play('kaboom', 30, false, true);
+// 		setTimeout(function() {
+// 			eurecaServer.deletePlayer(ship.id)
+// 		}, 40)
+// 		game.add.audio('shipdies').play('', 0, .7)
+// 	}
 
-}
+// }
 
 function shipsCollide(ship, curShip) {
 	setTimeout(function() {
