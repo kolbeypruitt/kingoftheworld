@@ -3,9 +3,23 @@ function Ship1(myId, game, ship, x, y) {
   this.health = 30;
   this.fireRate = 200;
   this.shipType = 'ship1'
-  this.ship = game.add.sprite(x, y, 'ship');
+    // this.ship = game.add.sprite(x, y, 'ship');
+  this.ship = game.add.sprite(x, y, 'marvin', 78);
   this.ship.animations.add('engines', [1, 2], 20, true);
   this.ship.animations.add('off', [0], 20, true);
+
+
+  this.ship.animations.add('walk_up', [60, 61, 62, 63, 64, 65, 66, 67, 68], 60, false, true);
+  this.ship.animations.add('walk_left', [69, 70, 71, 72, 73, 74, 75, 76, 77], 60, false, true);
+  this.ship.animations.add('walk_down', [78, 79, 80, 81, 82, 83, 84, 85, 86], 60, false, true);
+  this.ship.animations.add('walk_right', [87, 88, 89, 90, 91, 92, 93, 94, 95], 60, false, true);
+
+  this.ship.animations.add('attack_up', [178, 179, 180, 181, 182, 183], 60, false, true);
+  this.ship.animations.add('attack_left', [184, 185, 186, 187, 188, 189], 60, false, true);
+  this.ship.animations.add('attack_down', [190, 191, 192, 193, 194, 195], 60, false, true);
+  this.ship.animations.add('attack_right', [196, 197, 198, 199, 200, 201], 60, false, true);
+
+
   this.ship.anchor.set(0.5);
   this.ship.id = myId;
   game.physics.enable(this.ship, Phaser.Physics.ARCADE);
@@ -13,7 +27,7 @@ function Ship1(myId, game, ship, x, y) {
   this.ship.body.drag.setTo(40);
   this.ship.body.maxVelocity.setTo(330);
   this.ship.body.bounce.setTo(0, 0);
-  this.ship.angle = -90;
+  // this.ship.angle = -90;
   // setSize does not work with rotation
   // this.ship.body.setSize(40, 15, 20, 15);
   this.bullets = game.add.group();
@@ -23,7 +37,7 @@ function Ship1(myId, game, ship, x, y) {
   this.bullets.setAll('anchor.x', 0.5);
   this.bullets.setAll('anchor.y', 0.5);
   this.bullets.setAll('outOfBoundsKill', true);
-  this.bullets.setAll('checkWorldBounds', true);  
+  this.bullets.setAll('checkWorldBounds', true);
   // Allow powerslide
   game.physics.arcade.velocityFromRotation(this.ship.rotation, 0, this.ship.body.velocity);
 }
@@ -36,15 +50,14 @@ Ship1.prototype.update = function(shipType) {
     this.cursor.right != this.input.right ||
     this.cursor.up != this.input.up ||
     this.cursor.down != this.input.down ||
-    this.cursor.fire != this.input.fire
+    this.cursor.fire != this.input.fire ||
+    this.cursor.attack != this.input.attack
   );
-  
-  if (inputChanged || newLogin === true)
-  {
+
+  if (inputChanged || newLogin === true) {
     //Handle input change here
     //send new values to the server   
-    if (this.ship.id == myId)
-    {
+    if (this.ship.id == myId) {
       // send latest valid state to the server
       this.input.x = this.ship.x;
       this.input.y = this.ship.y;
@@ -53,74 +66,85 @@ Ship1.prototype.update = function(shipType) {
       this.input.shipType = this.shipType;
 
       eurecaServer.handleKeys(this.input);
-      newLogin = false    
+      newLogin = false
     }
   }
 
-  if (this.cursor.left)
-  {
-    this.ship.angle -= 5;
+  if (this.cursor.left) {
+    this.ship.body.velocity.x = -200;
+    this.currentDir = "left"
+    this.ship.animations.play('walk_left', 8, false, false);
   }
-  else if (this.cursor.right)
-  {
-    this.ship.angle += 5;
-  } 
-  if (this.cursor.up)
-  {
-    // If statement doesn't work as play appears to be asynch
-    // if(!game.add.audio('thrust1').isPlaying)
-    game.add.audio('thrust1').play('', 0, .2, false, false)
-    this.ship.animations.play('engines')
-    this.ship.body.velocity.x += Math.cos(this.ship.rotation)*10
-    this.ship.body.velocity.y += Math.sin(this.ship.rotation)*10
+  if (this.cursor.right) {
+    this.ship.body.velocity.x = 200;
+    this.currentDir = "right"
+    this.ship.animations.play('walk_right', 8, false, false);
   }
-  if(!this.cursor.up){
-    this.ship.animations.play('off')
+  if (this.cursor.up) {
+    this.ship.body.velocity.y = -200;
+    this.currentDir = "up"
+    this.ship.animations.play('walk_up', 8, false, false);
   }
-
-  if (this.cursor.down)
-  {
-    if(this.game.time.now > this.nextSpecial){
-      this.ship.angle += 180
-      this.nextSpecial = this.game.time.now + this.specialDelay
-    }
+  if (this.cursor.down) {
+    this.ship.body.velocity.y = 200;
+    this.currentDir = "down"
+    this.ship.animations.play('walk_down', 8, false, false);
   }
 
-  if (this.cursor.fire)
-  { 
-    this.fire({x:this.cursor.tx, y:this.cursor.ty});
+  if (this.cursor.attack && this.currentDir === "left") {
+    this.ship.animations.play('attack_left', 8, false, false).onComplete.add(function () {
+      console.log('animation complete');
+    }, this);
+    // this.attack(this.ship, enemy)
+  } else
+  if (this.cursor.attack && this.currentDir === "right") {
+    this.ship.animations.play('attack_right', 8, false, false);
+  } else
+  if (this.cursor.attack && this.currentDir === "up") {
+    this.ship.animations.play('attack_up', 8, false, false);
+  } else
+  if (this.cursor.attack && this.currentDir === "down") {
+    this.ship.scale.setTo(2, 2);
+    this.ship.animations.play('attack_down', 8, false, false);
+  }
+
+  if (this.cursor.fire) {
+    this.fire({
+      x: this.cursor.tx,
+      y: this.cursor.ty
+    });
   }
   // The *.8 creates a parallax scrolling effect
-  land.tilePosition.x = -game.camera.x*.8;
-  land.tilePosition.y = -game.camera.y*.8;  
+  land.tilePosition.x = -game.camera.x * .8;
+  land.tilePosition.y = -game.camera.y * .8;
 
-  if(this.cursor.up) slideDirection = this.ship.rotation
-  
-  if (this.currentSpeed > 0)
-  {
+  if (this.cursor.up) slideDirection = this.ship.rotation
+
+  if (this.currentSpeed > 0) {
     game.physics.arcade.velocityFromRotation(slideDirection, this.currentSpeed, this.ship.body.velocity);
   }
-  
+
   game.world.wrap(this.ship)
 };
 Ship1.prototype.fire = function(target) {
-    if (!this.alive) return;
-    // This function takes bullets from the extinct bullet pool and allows fire if delay is up
-    if (this.game.time.now > this.nextFire && this.bullets.countDead() > 0)
-    {
-      game.add.audio('fire1').play()
-      this.nextFire = this.game.time.now + this.fireRate;
-      var bullet = this.bullets.getFirstDead();
-      bullet.bringToTop()
-      
-      // Using sin and cos to add offset in direction ship is facing
-      bullet.reset(this.ship.x + Math.cos(this.ship.rotation)*30, this.ship.y + Math.sin(this.ship.rotation)*30);
+  if (!this.alive) return;
+  // This function takes bullets from the extinct bullet pool and allows fire if delay is up
+  if (this.game.time.now > this.nextFire && this.bullets.countDead() > 0) {
+    // game.add.audio('fire1').play()
+    this.nextFire = this.game.time.now + this.fireRate;
+    var bullet = this.bullets.getFirstDead();
+    bullet.bringToTop()
 
-      // Rotate the sprite
-      bullet.rotation = this.ship.rotation;
-      // Set the bullet speed and direction
-      game.physics.arcade.velocityFromRotation(this.ship.rotation, 800, bullet.body.velocity);
-      // Destroy the bullet after a certain time to limit range 
-      setTimeout(function(){ bullet.kill() }, 600)
-    }
+    // Using sin and cos to add offset in direction ship is facing
+    bullet.reset(this.ship.x + Math.cos(this.ship.rotation) * 30, this.ship.y + Math.sin(this.ship.rotation) * 30);
+
+    // Rotate the sprite
+    bullet.rotation = this.ship.rotation;
+    // Set the bullet speed and direction
+    game.physics.arcade.velocityFromRotation(this.ship.rotation, 800, bullet.body.velocity);
+    // Destroy the bullet after a certain time to limit range 
+    setTimeout(function() {
+      bullet.kill()
+    }, 600)
+  }
 }

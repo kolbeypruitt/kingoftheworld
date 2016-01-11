@@ -12,7 +12,7 @@ var cursors;
 var fireButton;
 var bullets;
 var restartButton;
-var myId=0;
+var myId = 0;
 var viewportWidth = window.innerWidth * window.devicePixelRatio;
 var viewportHeight = window.innerHeight * window.devicePixelRatio;
 var fireRate = 400;
@@ -25,73 +25,81 @@ var eurecaServer;
 var eurecaClientSetup = function() {
 	//create an instance of eureca.io client
 	var eurecaClient = new Eureca.Client();
-	
-	eurecaClient.ready(function (proxy) {		
+
+	eurecaClient.ready(function(proxy) {
 		eurecaServer = proxy;
 	});
 	//=============================================================================
 	//	Methods defined under "exports" namespace become available server side
 	//=============================================================================
-	eurecaClient.exports.setId = function(id) 
-	{
+	eurecaClient.exports.setId = function(id) {
 		// This is called on connect, assigns id and takes player to menu
 		myId = id;
 		menu();
-	}	
-	
-	eurecaClient.exports.kill = function(id)
-	{	
+	}
+
+	eurecaClient.exports.kill = function(id) {
 		if (shipsList[id]) {
 			shipsList[id].kill();
 			delete shipsList[id];
-			if(id === ship.id){
-				var style = { font: "48px Arial", fill: "#f00"};
-				var l = game.add.text(viewportWidth/2-120, viewportHeight/2-100, "You lose.", style);
+			if (id === ship.id) {
+				var style = {
+					font: "48px Arial",
+					fill: "#f00"
+				};
+				var l = game.add.text(viewportWidth / 2 - 120, viewportHeight / 2 - 100, "You lose.", style);
 				l.fixedToCamera = true;
 			}
 
 			// setTimeout lets the other kill get registered if the last two ships collide
-			setTimeout(function(){
-				if(Object.keys(shipsList).length === 1){
-					if(shipsList[ship.id].alive){
-						var style = { font: "48px Arial", fill: "#0f0"};
-						w = game.add.text(viewportWidth/2-120, viewportHeight/2-100, "You win!", style);
-						w.fixedToCamera = true;
-						switch(ship.key){
-							case "ship":
-								setTimeout(function(){ game.add.audio('win1').play() }, 1500)
-								break;
-							case "ship2":
-								setTimeout(function(){ game.add.audio('win2').play() }, 1500)
-								break;
-							case "ship3":
-								setTimeout(function(){ game.add.audio('win3').play('', 0, 1.8) }, 1500)
-								break;
+			setTimeout(function() {
+					if (Object.keys(shipsList).length === 1) {
+						if (shipsList[ship.id].alive) {
+							var style = {
+								font: "48px Arial",
+								fill: "#0f0"
+							};
+							w = game.add.text(viewportWidth / 2 - 120, viewportHeight / 2 - 100, "You win!", style);
+							w.fixedToCamera = true;
+							switch (ship.key) {
+								case "ship":
+									setTimeout(function() {
+										game.add.audio('win1').play()
+									}, 1500)
+									break;
+								case "ship2":
+									setTimeout(function() {
+										game.add.audio('win2').play()
+									}, 1500)
+									break;
+								case "ship3":
+									setTimeout(function() {
+										game.add.audio('win3').play('', 0, 1.8)
+									}, 1500)
+									break;
+							}
 						}
 					}
-				}
-			}, 1)
-			// Adds restart button on death, not used in this version
-			// if(id === ship.id){
-			// 	restartButton = game.add.button(200, 200, 'restart', restart, this);
-			// 	restartButton.fixedToCamera = true
-			// }
+				}, 1)
+				// Adds restart button on death, not used in this version
+				// if(id === ship.id){
+				// 	restartButton = game.add.button(200, 200, 'restart', restart, this);
+				// 	restartButton.fixedToCamera = true
+				// }
 		}
-	}	
-	
-	eurecaClient.exports.spawnEnemy = function(i, x, y, shipType)
-	{
+	}
+
+	eurecaClient.exports.spawnEnemy = function(i, x, y, shipType) {
 		if (i == myId) return; //this is me
 		console.log('SPAWN');
 
-		if(shipsList[i]) {
+		if (shipsList[i]) {
 			console.log("Trying to create a ship that already exists.")
-		}
-		else {
+		} else {
 			var shp;
 			// shipType is a string passed to this function to identify
 			// what type of ship needs to be created
-			switch(shipType){
+			switch (shipType) {
 				case "ship1":
 					shp = new Ship1(i, game, ship, x, y);
 					break;
@@ -106,10 +114,9 @@ var eurecaClientSetup = function() {
 			newLogin = true
 		}
 	}
-	
-	eurecaClient.exports.updateState = function(id, state)
-	{
-		if (shipsList[id])  {
+
+	eurecaClient.exports.updateState = function(id, state) {
+		if (shipsList[id]) {
 			shipsList[id].ship.bringToTop();
 			shipsList[id].cursor = state;
 			shipsList[id].ship.x = state.x;
@@ -118,8 +125,7 @@ var eurecaClientSetup = function() {
 			shipsList[id].alive = state.alive;
 			shipsList[id].shipType = state.shipType;
 			shipsList[id].update(state.shipType);
-		}
-		else {
+		} else {
 			// This code not needed
 			// var shp;
 			// switch(state.shipType){
@@ -137,22 +143,22 @@ var eurecaClientSetup = function() {
 }
 
 
-Ship = function (index, game, player, x, y) {
+Ship = function(index, game, player, x, y) {
 
 	this.cursor = {
-		left:false,
-		right:false,
-		up:false,
-		down:false,
-		fire:false		
+		left: false,
+		right: false,
+		up: false,
+		down: false,
+		fire: false
 	}
 
 	this.input = {
-		left:false,
-		right:false,
-		up:false,
-		down:false,
-		fire:false
+		left: false,
+		right: false,
+		up: false,
+		down: false,
+		fire: false
 	}
 
 	this.game = game;
@@ -160,7 +166,7 @@ Ship = function (index, game, player, x, y) {
 	this.player = player;
 	this.shipType = ''
 
-	
+
 	this.currentSpeed = 0;
 	this.fireRate;
 	this.nextFire = 0;
@@ -169,7 +175,7 @@ Ship = function (index, game, player, x, y) {
 	this.nextSpecial = 0;
 	this.alive = true;
 
-	
+
 };
 Ship.prototype.kill = function() {
 	this.alive = false;
@@ -177,9 +183,14 @@ Ship.prototype.kill = function() {
 }
 
 
-var game = new Phaser.Game(viewportWidth, viewportHeight, Phaser.AUTO, 'phaser-example', { preload: preload, create: eurecaClientSetup, update: update, render: render });
+var game = new Phaser.Game(viewportWidth, viewportHeight, Phaser.AUTO, 'phaser-example', {
+	preload: preload,
+	create: eurecaClientSetup,
+	update: update,
+	render: render
+});
 
-function preload () {
+function preload() {
 
 
 	game.load.audio('fire1', ['assets/audio/fire1.wav']);
@@ -209,48 +220,54 @@ function preload () {
 	// game.load.image('restart','assets/restart.png'); 
 }
 
-function menu () {
+function menu() {
 	var background = game.add.tileSprite(0, 0, viewportWidth, viewportHeight, 'grass');
-	background.autoScroll(-10,5)
-	var logo = game.add.sprite(viewportWidth/2 - 200, 10, 'logo');
+	background.autoScroll(-10, 5)
+	var logo = game.add.sprite(viewportWidth / 2 - 200, 10, 'logo');
 	var choose = "Choose your vessel:";
-	var style = { font: "32px Serif", fill: "#ddd"};
-	var t1 = game.add.text(viewportWidth/4 - 150, 300, choose, style);
+	var style = {
+		font: "32px Serif",
+		fill: "#ddd"
+	};
+	var t1 = game.add.text(viewportWidth / 4 - 150, 300, choose, style);
 
-	var chooseShip1 = game.add.button(viewportWidth/4 - 150, 400, 'marvin', create.bind(this, Ship1, 'ship1'));
-	var chooseShip2 = game.add.button(viewportWidth/4 - 50, 390, 'ship2', create.bind(this, Ship2, 'ship2'));
-	var chooseShip3 = game.add.button(viewportWidth/4 + 50, 370, 'ship3', create.bind(this, Ship3, 'ship3'));
+	var chooseShip1 = game.add.button(viewportWidth / 4 - 150, 400, 'marvin', create.bind(this, Ship1, 'ship1'));
+	var chooseShip2 = game.add.button(viewportWidth / 4 - 50, 390, 'ship2', create.bind(this, Ship2, 'ship2'));
+	var chooseShip3 = game.add.button(viewportWidth / 4 + 50, 370, 'ship3', create.bind(this, Ship3, 'ship3'));
 
 	var instructions = "Arrow keys to move, spacebar to fire, down for special ability";
-	var style2 = { font: "20px Arial", fill: "#ddd", align: "center"};
-	var t2 = game.add.text(viewportWidth/2 - 270, viewportHeight - 50, instructions, style2);
+	var style2 = {
+		font: "20px Arial",
+		fill: "#ddd",
+		align: "center"
+	};
+	var t2 = game.add.text(viewportWidth / 2 - 270, viewportHeight - 50, instructions, style2);
 
 }
 
 
-function create (shipType, shipString) {
+function create(shipType, shipString) {
 
 
 
 	//  Resize our game world
 	game.world.setBounds(0, 0, 1920, 1080);
-	game.stage.disableVisibilityChange  = true;
+	game.stage.disableVisibilityChange = true;
 	//  Our tiled scrolling background
 	land = game.add.tileSprite(0, 0, viewportWidth, viewportHeight, 'grass');
 	land.fixedToCamera = true;
-	
+
 	player = new shipType(myId, game, ship);
 	shipsList[myId] = player;
 	ship = player.ship;
-	ship.x= game.world.randomX 
-	ship.y= game.world.randomY
+	ship.x = game.world.randomX
+	ship.y = game.world.randomY
 	ship.bringToTop();
 	bullets = player.bullets;
 
 	//  Explosion pool
 	explosions = game.add.group();
-	for (var i = 0; i < 10; i++)
-	{
+	for (var i = 0; i < 10; i++) {
 		var explosionAnimation = explosions.create(0, 0, 'kaboom', [0], false);
 		explosionAnimation.anchor.setTo(0.5, 0.5);
 		explosionAnimation.animations.add('kaboom');
@@ -269,11 +286,14 @@ function create (shipType, shipString) {
 	fireButton = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
 
 	var health = "Health: " + player.health;
-	var style = { font: "18px Arial", fill: "#ddd"};
+	var style = {
+		font: "18px Arial",
+		fill: "#ddd"
+	};
 	ship.h = game.add.text(10, 20, health, style);
 	ship.h.fixedToCamera = true;
 
-	
+
 	// setTimeout(removeLogo, 2000);
 	var keys = {
 		x: ship.x,
@@ -331,55 +351,55 @@ function create (shipType, shipString) {
 // 	logo.kill();
 // }
 
-function update () {
+function update() {
 	//do not update if client not ready
 	if (!ready) return;
-	
+
 	player.input.left = cursors.left.isDown;
 	player.input.right = cursors.right.isDown;
 	player.input.up = cursors.up.isDown;
 	player.input.down = cursors.down.isDown;
-	player.input.fire = fireButton.isDown;
-	player.input.tx = game.input.x+ game.camera.x;
-	player.input.ty = game.input.y+ game.camera.y;
+	player.input.attack = fireButton.isDown;
+	player.input.tx = game.input.x + game.camera.x;
+	player.input.ty = game.input.y + game.camera.y;
 
-	for (var i in shipsList)
-	{
+	for (var i in shipsList) {
 		if (!shipsList[i]) continue;
 		var curBullets = shipsList[i].bullets;
 		var curShip = shipsList[i].ship;
 		if (shipsList[i].alive) shipsList[i].update();
-		for (var j in shipsList)
-		{
+		for (var j in shipsList) {
 			if (!shipsList[j]) continue;
-			if (j!=i) 
-			{
-			
+			if (j != i) {
+
 				var targetShip = shipsList[j].ship;
 				// Destroying ships on collision so collision detection not needed in this version
 				// game.physics.arcade.collide(curShip, targetShip);
 				game.physics.arcade.overlap(curBullets, targetShip, bulletHitPlayer, null, this);
 				game.physics.arcade.overlap(curShip, targetShip, shipsCollide, null, this);
-			
+
 			}
-			if (!shipsList[j].alive)
-			{
+			if (!shipsList[j].alive) {
 				// shipsList[j].update();
-			}			
+			}
 		}
 	}
 }
 
-function bulletHitPlayer (ship, bullet) {
+function bulletHitPlayer(ship, bullet) {
 	bullet.kill();
 
-	switch(bullet.key){
+	switch (bullet.key) {
 		case "bullet1":
 			shipsList[ship.id].health -= 10
 			game.add.audio('hit1').play('', 0, .3)
-			if(ship.h){ship.h.destroy()
+			if (ship.h) {
+				ship.h.destroy()
 				var health = "Health: " + player.health;
-				var style = { font: "16px Arial", fill: "#ddd"};
+				var style = {
+					font: "16px Arial",
+					fill: "#ddd"
+				};
 				ship.h = game.add.text(10, 20, health, style);
 				ship.h.fixedToCamera = true;
 			}
@@ -387,9 +407,13 @@ function bulletHitPlayer (ship, bullet) {
 		case "bullet2":
 			shipsList[ship.id].health -= 2
 			game.add.audio('hit2').play('', 0, .5)
-			if(ship.h){ship.h.destroy()
+			if (ship.h) {
+				ship.h.destroy()
 				var health = "Health: " + player.health;
-				var style = { font: "16px Arial", fill: "#ddd"};
+				var style = {
+					font: "16px Arial",
+					fill: "#ddd"
+				};
 				ship.h = game.add.text(10, 20, health, style);
 				ship.h.fixedToCamera = true;
 			}
@@ -397,43 +421,47 @@ function bulletHitPlayer (ship, bullet) {
 		case "bullet3":
 			shipsList[ship.id].health -= 20
 			game.add.audio('hit3').play()
-			if(ship.h){ship.h.destroy()
+			if (ship.h) {
+				ship.h.destroy()
 				var health = "Health: " + player.health;
-				var style = { font: "16px Arial", fill: "#ddd"};
+				var style = {
+					font: "16px Arial",
+					fill: "#ddd"
+				};
 				ship.h = game.add.text(10, 20, health, style);
 				ship.h.fixedToCamera = true;
 			}
 			break;
 	}
 
-	if (shipsList[ship.id].health<=0)
-	{
+	if (shipsList[ship.id].health <= 0) {
 		var explosionAnimation = explosions.getFirstExists(false);
 		explosionAnimation.reset(ship.x, ship.y);
 		explosionAnimation.play('kaboom', 30, false, true);
-		setTimeout(function(){eurecaServer.deletePlayer(ship.id)},40)
+		setTimeout(function() {
+			eurecaServer.deletePlayer(ship.id)
+		}, 40)
 		game.add.audio('shipdies').play('', 0, .7)
 	}
 
 }
 
-function shipsCollide (ship, curShip) {
-	setTimeout(function(){
+function shipsCollide(ship, curShip) {
+	setTimeout(function() {
 		eurecaServer.deletePlayer(ship.id)
 		var explosionAnimation = explosions.getFirstExists(false);
 		explosionAnimation.reset(ship.x, ship.y);
 		explosionAnimation.play('kaboom', 30, false, true);
-	},40)
+	}, 40)
 	game.add.audio('shipdies').play('', 0, .7)
 }
 
-function restart () {
+function restart() {
 	restartButton.kill()
 	ready = false;
 	respawn();
 	eurecaServer.handshake();
-	ready = true;		
+	ready = true;
 }
 
-function render () {}
-
+function render() {}
