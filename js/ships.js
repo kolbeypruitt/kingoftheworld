@@ -193,6 +193,9 @@ var game = new Phaser.Game(viewportWidth, viewportHeight, Phaser.AUTO, 'phaser-e
 function preload() {
 
 
+	game.load.audio('goldenaxe', ['assets/audio/goldenaxe.mp3']);
+	game.load.audio('die', ['assets/audio/die.wav']);
+	game.load.audio('slash', ['assets/audio/slash.wav']);
 	game.load.audio('fire1', ['assets/audio/fire1.wav']);
 	game.load.audio('fire2', ['assets/audio/fire2.wav']);
 	game.load.audio('fire3', ['assets/audio/fire3.wav']);
@@ -249,10 +252,11 @@ function menu() {
 
 function create(shipType, shipString) {
 
-
+	game.add.audio('goldenaxe').play('', 0, .7);
 
 	//  Resize our game world
 	game.world.setBounds(0, 0, 1920, 1080);
+	// game.world.setBounds(0, 0, 1200, 800);
 	game.stage.disableVisibilityChange = true;
 	//  Our tiled scrolling background
 	land = game.add.tileSprite(0, 0, viewportWidth, viewportHeight, 'grass');
@@ -378,7 +382,7 @@ function update() {
 				// game.physics.arcade.collide(curShip, targetShip);
 				if(game.physics.arcade.distanceBetween(curShip, targetShip) < 100) {
 					if (shipsList[i].input.attack) {
-
+						game.add.audio('slash').play('', 0, 0.7);
 						if (!shipsList[i].alive) return;
 
 						if (this.game.time.now > shipsList[i].nextFire) {
@@ -421,7 +425,7 @@ function attackHitPlayer(curShip, targetShip) {
       setTimeout(function() {
       	eurecaServer.deletePlayer(targetShip.ship.id)
       }, 40)
-      game.add.audio('shipdies').play('', 0, .7)
+      game.add.audio('die').play('', 0, 4);
     }, this);
 	}
 }
