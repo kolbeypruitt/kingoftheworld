@@ -2,6 +2,7 @@ function Ship1(myId, game, ship, x, y) {
   Ship.call(this, myId, game, ship)
   this.health = 30;
   this.fireRate = 500;
+  this.damage = 5;
   this.shipType = 'ship1'
     // this.ship = game.add.sprite(x, y, 'ship');
   this.ship = game.add.sprite(x, y, 'marvin', 78);
@@ -28,9 +29,14 @@ function Ship1(myId, game, ship, x, y) {
   this.ship.body.drag.setTo(40);
   this.ship.body.maxVelocity.setTo(330);
   this.ship.body.bounce.setTo(0, 0);
-  // this.ship.angle = -90;
   // setSize does not work with rotation
   // this.ship.body.setSize(40, 15, 20, 15);
+  this.ship.body.collideWorldBounds = true;
+  this.ship.body.checkCollision.up = false;
+  this.ship.body.checkCollision.down = false;
+  this.ship.body.bounce.setTo(1, 1);
+
+
   this.bullets = game.add.group();
   this.bullets.enableBody = true;
   this.bullets.physicsBodyType = Phaser.Physics.ARCADE;
@@ -126,7 +132,6 @@ Ship1.prototype.update = function(shipType) {
     }, this);
   } else
   if (this.cursor.attack && this.currentDir === "down") {
-    this.ship.scale.setTo(2, 2);
     this.ship.animations.play('attack_down', 8, false, false).onComplete.add(function () {
       isAttacking = false;
     }, this);

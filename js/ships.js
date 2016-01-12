@@ -59,8 +59,11 @@ var eurecaClientSetup = function() {
 								font: "48px Arial",
 								fill: "#0f0"
 							};
-							w = game.add.text(viewportWidth / 2 - 120, viewportHeight / 2 - 100, "You win!", style);
+							w = game.add.text(viewportWidth / 2 - 120, viewportHeight / 2 - 100, "You are the KING OF THE WORLD", style);
 							w.fixedToCamera = true;
+				      setTimeout(function() {
+				      	w.destroy();
+				      }, 3000)
 							switch (ship.key) {
 								case "ship":
 									setTimeout(function() {
@@ -79,6 +82,18 @@ var eurecaClientSetup = function() {
 									break;
 							}
 						}
+					} else {
+						if (shipsList[ship.id].alive) {
+							var style = {
+								font: "48px Arial",
+								fill: "#0f0"
+							};
+							w = game.add.text(viewportWidth / 2 - 120, viewportHeight / 2 - 100, "You leveled up!", style);
+							w.fixedToCamera = true;
+				      setTimeout(function() {
+				      	w.destroy();
+				      }, 3000)
+				    }
 					}
 				}, 1)
 				// Adds restart button on death, not used in this version
@@ -196,6 +211,8 @@ function preload() {
 	game.load.audio('goldenaxe', ['assets/audio/goldenaxe.mp3']);
 	game.load.audio('die', ['assets/audio/die.wav']);
 	game.load.audio('slash', ['assets/audio/slash.wav']);
+	game.load.audio('levelup', ['assets/audio/levelup.wav']);
+
 	game.load.audio('fire1', ['assets/audio/fire1.wav']);
 	game.load.audio('fire2', ['assets/audio/fire2.wav']);
 	game.load.audio('fire3', ['assets/audio/fire3.wav']);
@@ -255,8 +272,8 @@ function create(shipType, shipString) {
 	game.add.audio('goldenaxe').play('', 0, .7);
 
 	//  Resize our game world
-	game.world.setBounds(0, 0, 1920, 1080);
-	// game.world.setBounds(0, 0, 1200, 800);
+	// game.world.setBounds(0, 0, 1920, 1080);
+	game.world.setBounds(-1000, -1000, 2000, 2000);
 	game.stage.disableVisibilityChange = true;
 	//  Our tiled scrolling background
 	land = game.add.tileSprite(0, 0, viewportWidth, viewportHeight, 'grass');
@@ -284,6 +301,8 @@ function create(shipType, shipString) {
 	// logo.fixedToCamera = true;
 	// game.input.onDown.add(removeLogo, this);
 
+
+	game.camera.deadzone = new Phaser.Rectangle(150, 150, 500, 300);
 	game.camera.follow(ship);
 	game.camera.focusOnXY(0, 0);
 
@@ -382,27 +401,22 @@ function update() {
 				// game.physics.arcade.collide(curShip, targetShip);
 				if(game.physics.arcade.distanceBetween(curShip, targetShip) < 100) {
 					if (shipsList[i].input.attack) {
-						game.add.audio('slash').play('', 0, 0.7);
 						if (!shipsList[i].alive) return;
 
 						if (this.game.time.now > shipsList[i].nextFire) {
 						  // game.add.audio('fire1').play()
 						  shipsList[i].nextFire = this.game.time.now + shipsList[i].fireRate;
 						  // Destroy the bullet after a certain time to limit range 
-						  shipsList[j].health -= 5;
+						  shipsList[j].health -= shipsList[i].damage;
 						  console.log('enemy health ', shipsList[j].health);
 						  // shipsList[j].update();
-						  attackHitPlayer(shipsList[i], shipsList[j]);
+						  attackKilledPlayer(shipsList[i], shipsList[j]);
+						  setTimeout(function() {
+						  	game.add.audio('slash').play('', 0, 0.7);
+						  }, 400)
 						}
 
 					}
-
-
-
-
-
-
-
 
 				}
 				// game.physics.arcade.overlap(curBullets, targetShip, bulletHitPlayer, null, this);
@@ -416,11 +430,15 @@ function update() {
 	}
 }
 
-function attackHitPlayer(curShip, targetShip) {
+function attackKilledPlayer(curShip, targetShip) {
 	if (targetShip.health <= 0) {
 		// var explosionAnimation = explosions.getFirstExists(false);
 		// explosionAnimation.reset(targetShip.ship.x, targetShip.ship.y);
 		// explosionAnimation.play('kaboom', 30, false, true);
+
+		curShip.ship.scale.setTo(1.5, 1.5);
+		curShip.health += 10;
+		curShip.damage += 5;
 		targetShip.ship.animations.play('die', 8, false, false).onComplete.add(function () {
       setTimeout(function() {
       	eurecaServer.deletePlayer(targetShip.ship.id)
