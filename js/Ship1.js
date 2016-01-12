@@ -19,6 +19,7 @@ function Ship1(myId, game, ship, x, y) {
   this.ship.animations.add('attack_down', [190, 191, 192, 193, 194, 195], 60, false, true);
   this.ship.animations.add('attack_right', [196, 197, 198, 199, 200, 201], 60, false, true);
 
+  this.ship.animations.add('die', [172, 173, 174, 175, 176, 177], 60, false, true);
 
   this.ship.anchor.set(0.5);
   this.ship.id = myId;

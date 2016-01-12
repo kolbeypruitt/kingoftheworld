@@ -309,9 +309,9 @@ function create(shipType, shipString) {
 	ready = true;
 
 	// Remove menu buttons
-	chooseShip1.kill();
-	chooseShip2.kill();
-	chooseShip3.kill();
+	// chooseShip1.kill();
+	// chooseShip2.kill();
+	// chooseShip3.kill();
 }
 
 //	Not using respawn in this version
@@ -378,13 +378,8 @@ function update() {
 				// game.physics.arcade.collide(curShip, targetShip);
 				if(game.physics.arcade.distanceBetween(curShip, targetShip) < 100) {
 					if (shipsList[i].input.attack) {
-						// console.log('ouch!!!!');
-						// setTimeout(function() {
-						//   shipsList[j].health -= 5;
-						// }, 1000)
-						// console.log(shipsList[i].health);
+
 						if (!shipsList[i].alive) return;
-						// This function takes bullets from the extinct bullet pool and allows fire if delay is up
 
 						if (this.game.time.now > shipsList[i].nextFire) {
 						  // game.add.audio('fire1').play()
@@ -392,7 +387,8 @@ function update() {
 						  // Destroy the bullet after a certain time to limit range 
 						  shipsList[j].health -= 5;
 						  console.log('enemy health ', shipsList[j].health);
-						  shipsList[j].update();
+						  // shipsList[j].update();
+						  attackHitPlayer(shipsList[i], shipsList[j]);
 						}
 
 					}
@@ -406,13 +402,27 @@ function update() {
 
 				}
 				// game.physics.arcade.overlap(curBullets, targetShip, bulletHitPlayer, null, this);
-				game.physics.arcade.overlap(curShip, targetShip, shipsCollide, null, this);
+				// game.physics.arcade.overlap(curShip, targetShip, shipsCollide, null, this);
 
 			}
 			if (!shipsList[j].alive) {
 				// shipsList[j].update();
 			}
 		}
+	}
+}
+
+function attackHitPlayer(curShip, targetShip) {
+	if (targetShip.health <= 0) {
+		// var explosionAnimation = explosions.getFirstExists(false);
+		// explosionAnimation.reset(targetShip.ship.x, targetShip.ship.y);
+		// explosionAnimation.play('kaboom', 30, false, true);
+		targetShip.ship.animations.play('die', 8, false, false).onComplete.add(function () {
+      setTimeout(function() {
+      	eurecaServer.deletePlayer(targetShip.ship.id)
+      }, 40)
+      game.add.audio('shipdies').play('', 0, .7)
+    }, this);
 	}
 }
 
@@ -464,17 +474,17 @@ function update() {
 // 			break;
 // 	}
 
-	if (shipsList[ship.id].health <= 0) {
-		var explosionAnimation = explosions.getFirstExists(false);
-		explosionAnimation.reset(ship.x, ship.y);
-		explosionAnimation.play('kaboom', 30, false, true);
-		setTimeout(function() {
-			eurecaServer.deletePlayer(ship.id)
-		}, 40)
-		game.add.audio('shipdies').play('', 0, .7)
-	}
+	// if (shipsList[ship.id].health <= 0) {
+	// 	var explosionAnimation = explosions.getFirstExists(false);
+	// 	explosionAnimation.reset(ship.x, ship.y);
+	// 	explosionAnimation.play('kaboom', 30, false, true);
+	// 	setTimeout(function() {
+	// 		eurecaServer.deletePlayer(ship.id)
+	// 	}, 40)
+	// 	game.add.audio('shipdies').play('', 0, .7)
+	// }
 
-}
+// }
 
 function shipsCollide(ship, curShip) {
 	setTimeout(function() {
