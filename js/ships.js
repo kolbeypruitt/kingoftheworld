@@ -208,6 +208,7 @@ function preload() {
 	game.load.audio('win3', ['assets/audio/win3.wav']);
 
 	game.load.atlasJSONHash('marvin', 'assets/marvin.png', 'assets/marvin.json');
+	game.load.spritesheet('marvinBtn', 'assets/marvinBtn.png')
 	game.load.spritesheet('ship', 'assets/ships1.png', 60, 45);
 	game.load.spritesheet('ship2', 'assets/ships2.png', 64, 64);
 	game.load.spritesheet('ship3', 'assets/ships3b.png', 134, 110);
@@ -224,18 +225,18 @@ function menu() {
 	var background = game.add.tileSprite(0, 0, viewportWidth, viewportHeight, 'grass');
 	background.autoScroll(-10, 5)
 	var logo = game.add.sprite(viewportWidth / 2 - 200, 10, 'logo');
-	var choose = "Choose your vessel:";
+	var choose = "Choose your character:";
 	var style = {
 		font: "32px Serif",
 		fill: "#ddd"
 	};
 	var t1 = game.add.text(viewportWidth / 4 - 150, 300, choose, style);
 
-	var chooseShip1 = game.add.button(viewportWidth / 4 - 150, 400, 'marvin', create.bind(this, Ship1, 'ship1'));
-	var chooseShip2 = game.add.button(viewportWidth / 4 - 50, 390, 'ship2', create.bind(this, Ship2, 'ship2'));
-	var chooseShip3 = game.add.button(viewportWidth / 4 + 50, 370, 'ship3', create.bind(this, Ship3, 'ship3'));
+	var chooseShip1 = game.add.button(viewportWidth / 4 - 150, 400, 'marvinBtn', create.bind(this, Ship1, 'ship1'));
+	// var chooseShip2 = game.add.button(viewportWidth / 4 - 50, 390, 'ship2', create.bind(this, Ship2, 'ship2'));
+	// var chooseShip3 = game.add.button(viewportWidth / 4 + 50, 370, 'ship3', create.bind(this, Ship3, 'ship3'));
 
-	var instructions = "Arrow keys to move, spacebar to fire, down for special ability";
+	var instructions = "Arrow keys to move, spacebar to attack";
 	var style2 = {
 		font: "20px Arial",
 		fill: "#ddd",
@@ -377,13 +378,32 @@ function update() {
 				// game.physics.arcade.collide(curShip, targetShip);
 				if(game.physics.arcade.distanceBetween(curShip, targetShip) < 100) {
 					if (shipsList[i].input.attack) {
-						console.log('ouch!!!!');
-						setTimeout(function() {
-						  shipsList[i].health -= 5;
-						}, 1000)
-						console.log(shipsList[i].health);
+						// console.log('ouch!!!!');
+						// setTimeout(function() {
+						//   shipsList[j].health -= 5;
+						// }, 1000)
+						// console.log(shipsList[i].health);
+						if (!shipsList[i].alive) return;
+						// This function takes bullets from the extinct bullet pool and allows fire if delay is up
+
+						if (this.game.time.now > shipsList[i].nextFire) {
+						  // game.add.audio('fire1').play()
+						  shipsList[i].nextFire = this.game.time.now + shipsList[i].fireRate;
+						  // Destroy the bullet after a certain time to limit range 
+						  shipsList[j].health -= 5;
+						  console.log('enemy health ', shipsList[j].health);
+						  shipsList[j].update();
+						}
+
 					}
-					// console.log(shipsList[j].health);
+
+
+
+
+
+
+
+
 				}
 				// game.physics.arcade.overlap(curBullets, targetShip, bulletHitPlayer, null, this);
 				game.physics.arcade.overlap(curShip, targetShip, shipsCollide, null, this);
@@ -444,17 +464,17 @@ function update() {
 // 			break;
 // 	}
 
-// 	if (shipsList[ship.id].health <= 0) {
-// 		var explosionAnimation = explosions.getFirstExists(false);
-// 		explosionAnimation.reset(ship.x, ship.y);
-// 		explosionAnimation.play('kaboom', 30, false, true);
-// 		setTimeout(function() {
-// 			eurecaServer.deletePlayer(ship.id)
-// 		}, 40)
-// 		game.add.audio('shipdies').play('', 0, .7)
-// 	}
+	if (shipsList[ship.id].health <= 0) {
+		var explosionAnimation = explosions.getFirstExists(false);
+		explosionAnimation.reset(ship.x, ship.y);
+		explosionAnimation.play('kaboom', 30, false, true);
+		setTimeout(function() {
+			eurecaServer.deletePlayer(ship.id)
+		}, 40)
+		game.add.audio('shipdies').play('', 0, .7)
+	}
 
-// }
+}
 
 function shipsCollide(ship, curShip) {
 	setTimeout(function() {

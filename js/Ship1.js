@@ -1,7 +1,7 @@
 function Ship1(myId, game, ship, x, y) {
   Ship.call(this, myId, game, ship)
   this.health = 30;
-  this.fireRate = 200;
+  this.fireRate = 500;
   this.shipType = 'ship1'
     // this.ship = game.add.sprite(x, y, 'ship');
   this.ship = game.add.sprite(x, y, 'marvin', 78);
