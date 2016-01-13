@@ -37,14 +37,14 @@ function Ship1(myId, game, ship, x, y) {
   this.ship.body.bounce.setTo(1, 1);
 
 
-  this.bullets = game.add.group();
-  this.bullets.enableBody = true;
-  this.bullets.physicsBodyType = Phaser.Physics.ARCADE;
-  this.bullets.createMultiple(20, 'bullet1', 0, false);
-  this.bullets.setAll('anchor.x', 0.5);
-  this.bullets.setAll('anchor.y', 0.5);
-  this.bullets.setAll('outOfBoundsKill', true);
-  this.bullets.setAll('checkWorldBounds', true);
+  // this.bullets = game.add.group();
+  // this.bullets.enableBody = true;
+  // this.bullets.physicsBodyType = Phaser.Physics.ARCADE;
+  // this.bullets.createMultiple(20, 'bullet1', 0, false);
+  // this.bullets.setAll('anchor.x', 0.5);
+  // this.bullets.setAll('anchor.y', 0.5);
+  // this.bullets.setAll('outOfBoundsKill', true);
+  // this.bullets.setAll('checkWorldBounds', true);
   // Allow powerslide
   game.physics.arcade.velocityFromRotation(this.ship.rotation, 0, this.ship.body.velocity);
 }

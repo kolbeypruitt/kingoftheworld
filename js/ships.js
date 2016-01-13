@@ -274,14 +274,6 @@ function create(shipType, shipString) {
 	ship.bringToTop();
 	bullets = player.bullets;
 
-	//  Explosion pool
-	explosions = game.add.group();
-	for (var i = 0; i < 10; i++) {
-		var explosionAnimation = explosions.create(0, 0, 'kaboom', [0], false);
-		explosionAnimation.anchor.setTo(0.5, 0.5);
-		explosionAnimation.animations.add('kaboom');
-	}
-
 	//	Logo is in menu now
 	//=============================================================================	
 	// logo = game.add.sprite(viewportWidth/2 - 200, viewportHeight/3 - 85, 'logo');
@@ -495,15 +487,15 @@ function attackKilledPlayer(curShip, targetShip) {
 
 // }
 
-function shipsCollide(ship, curShip) {
-	setTimeout(function() {
-		eurecaServer.deletePlayer(ship.id)
-		var explosionAnimation = explosions.getFirstExists(false);
-		explosionAnimation.reset(ship.x, ship.y);
-		explosionAnimation.play('kaboom', 30, false, true);
-	}, 40)
-	game.add.audio('shipdies').play('', 0, .7)
-}
+// function shipsCollide(ship, curShip) {
+// 	setTimeout(function() {
+// 		eurecaServer.deletePlayer(ship.id)
+// 		var explosionAnimation = explosions.getFirstExists(false);
+// 		explosionAnimation.reset(ship.x, ship.y);
+// 		explosionAnimation.play('kaboom', 30, false, true);
+// 	}, 40)
+// 	game.add.audio('shipdies').play('', 0, .7)
+// }
 
 function restart() {
 	restartButton.kill()
