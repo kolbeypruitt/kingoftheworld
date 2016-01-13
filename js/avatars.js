@@ -374,7 +374,7 @@ function Avatar2(myId, game, avatar, x, y) {
   this.avatar.animations.add('off', [0], 20, true);
 
 
-  this.avatar.animations.add('walk_up', [60, 61, 62, 63, 64, 65, 66, 67, 68], 60, false, true);
+  this.avatar.animations.add('walk_up', [59, 60, 61, 62, 63, 64, 65, 66, 67], 60, false, true);
   this.avatar.animations.add('walk_left', [69, 70, 71, 72, 73, 74, 75, 76], 60, false, true);
   this.avatar.animations.add('walk_down', [77, 78, 79, 80, 81, 82, 83, 84, 85], 60, false, true);
   this.avatar.animations.add('walk_right', [87, 88, 89, 90, 91, 92, 93, 94], 60, false, true);
