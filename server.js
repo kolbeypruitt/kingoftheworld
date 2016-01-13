@@ -2,6 +2,7 @@ var express = require('express')
   , app = express(app)
   , server = require('http').createServer(app);
 
+require('dotenv').load();
 // serve static files from the current directory
 app.use(express.static(__dirname));
 
@@ -101,4 +102,4 @@ eurecaServer.exports.handleKeys = function (keys) {
 		//keep last known state so we can send it to new connected clients
 	}
 }
-server.listen(3000);
+server.listen(process.env.PORT);
