@@ -59,7 +59,7 @@ var eurecaClientSetup = function() {
 								font: "48px Arial",
 								fill: "#0f0"
 							};
-							w = game.add.text(viewportWidth / 2 - 120, viewportHeight / 2 - 100, "You are the KING OF THE WORLD", style);
+							w = game.add.text(viewportWidth / 2 - 300, viewportHeight / 2 - 100, "You are the KING OF THE WORLD", style);
 							w.fixedToCamera = true;
 				      setTimeout(function() {
 				      	w.destroy();
@@ -375,9 +375,9 @@ function Avatar2(myId, game, avatar, x, y) {
 
 
   this.avatar.animations.add('walk_up', [60, 61, 62, 63, 64, 65, 66, 67, 68], 60, false, true);
-  this.avatar.animations.add('walk_left', [69, 70, 71, 72, 73, 74, 75, 76, 77], 60, false, true);
-  this.avatar.animations.add('walk_down', [78, 79, 80, 81, 82, 83, 84, 85, 86], 60, false, true);
-  this.avatar.animations.add('walk_right', [87, 88, 89, 90, 91, 92, 93, 94, 95], 60, false, true);
+  this.avatar.animations.add('walk_left', [69, 70, 71, 72, 73, 74, 75, 76], 60, false, true);
+  this.avatar.animations.add('walk_down', [77, 78, 79, 80, 81, 82, 83, 84, 85], 60, false, true);
+  this.avatar.animations.add('walk_right', [87, 88, 89, 90, 91, 92, 93, 94], 60, false, true);
 
   this.avatar.animations.add('attack_up', [178, 179, 180, 181, 182, 183], 60, false, true);
   this.avatar.animations.add('attack_left', [184, 185, 186, 187, 188, 189], 60, false, true);
@@ -536,7 +536,7 @@ function Avatar3(myId, game, avatar, x, y) {
   this.avatar.animations.add('walk_up', [60, 61, 62, 63, 64, 65, 66, 67, 68], 60, false, true);
   this.avatar.animations.add('walk_left', [69, 70, 71, 72, 73, 74, 75, 76, 77], 60, false, true);
   this.avatar.animations.add('walk_down', [78, 79, 80, 81, 82, 83, 84, 85, 86], 60, false, true);
-  this.avatar.animations.add('walk_right', [87, 88, 89, 90, 91, 92, 93, 94, 95], 60, false, true);
+  this.avatar.animations.add('walk_right', [ 89, 90, 91, 92, 93, 94, 95], 60, false, true);
 
   this.avatar.animations.add('attack_up', [178, 179, 180, 181, 182, 183], 60, false, true);
   this.avatar.animations.add('attack_left', [184, 185, 186, 187, 188, 189], 60, false, true);

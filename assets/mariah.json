@@ -2,7 +2,7 @@
 
 "mariah_0000.png":
 {
-	"frame": {"x":5,"y":5,"w":28,"h":47},
+	"frame": {"x":6,"y":6,"w":28,"h":47},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":28,"h":47},
@@ -10,7 +10,7 @@
 },
 "mariah_0001.png":
 {
-	"frame": {"x":37,"y":5,"w":26,"h":47},
+	"frame": {"x":40,"y":6,"w":26,"h":47},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":26,"h":47},
@@ -18,7 +18,7 @@
 },
 "mariah_0002.png":
 {
-	"frame": {"x":67,"y":5,"w":26,"h":47},
+	"frame": {"x":72,"y":6,"w":26,"h":47},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":26,"h":47},
@@ -26,7 +26,7 @@
 },
 "mariah_0003.png":
 {
-	"frame": {"x":97,"y":5,"w":34,"h":47},
+	"frame": {"x":104,"y":6,"w":34,"h":47},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":34,"h":47},
@@ -34,7 +34,7 @@
 },
 "mariah_0004.png":
 {
-	"frame": {"x":135,"y":5,"w":44,"h":47},
+	"frame": {"x":144,"y":6,"w":44,"h":47},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":44,"h":47},
@@ -42,7 +42,7 @@
 },
 "mariah_0005.png":
 {
-	"frame": {"x":183,"y":5,"w":44,"h":47},
+	"frame": {"x":194,"y":6,"w":44,"h":47},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":44,"h":47},
@@ -50,7 +50,7 @@
 },
 "mariah_0006.png":
 {
-	"frame": {"x":97,"y":5,"w":34,"h":47},
+	"frame": {"x":104,"y":6,"w":34,"h":47},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":34,"h":47},
@@ -58,7 +58,7 @@
 },
 "mariah_0007.png":
 {
-	"frame": {"x":231,"y":5,"w":22,"h":48},
+	"frame": {"x":244,"y":6,"w":22,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":48},
@@ -66,7 +66,7 @@
 },
 "mariah_0008.png":
 {
-	"frame": {"x":257,"y":5,"w":22,"h":48},
+	"frame": {"x":272,"y":6,"w":22,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":48},
@@ -74,7 +74,7 @@
 },
 "mariah_0009.png":
 {
-	"frame": {"x":283,"y":5,"w":21,"h":48},
+	"frame": {"x":300,"y":6,"w":21,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":21,"h":48},
@@ -82,7 +82,7 @@
 },
 "mariah_0010.png":
 {
-	"frame": {"x":308,"y":5,"w":25,"h":48},
+	"frame": {"x":327,"y":6,"w":25,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":25,"h":48},
@@ -90,7 +90,7 @@
 },
 "mariah_0011.png":
 {
-	"frame": {"x":337,"y":5,"w":32,"h":48},
+	"frame": {"x":358,"y":6,"w":32,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":48},
@@ -98,7 +98,7 @@
 },
 "mariah_0012.png":
 {
-	"frame": {"x":373,"y":5,"w":32,"h":48},
+	"frame": {"x":396,"y":6,"w":32,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":48},
@@ -106,7 +106,7 @@
 },
 "mariah_0013.png":
 {
-	"frame": {"x":409,"y":5,"w":25,"h":48},
+	"frame": {"x":434,"y":6,"w":25,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":25,"h":48},
@@ -114,7 +114,7 @@
 },
 "mariah_0014.png":
 {
-	"frame": {"x":438,"y":5,"w":28,"h":49},
+	"frame": {"x":465,"y":6,"w":28,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":28,"h":49},
@@ -122,7 +122,7 @@
 },
 "mariah_0015.png":
 {
-	"frame": {"x":470,"y":5,"w":28,"h":49},
+	"frame": {"x":499,"y":6,"w":28,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":28,"h":49},
@@ -130,7 +130,7 @@
 },
 "mariah_0016.png":
 {
-	"frame": {"x":502,"y":5,"w":26,"h":49},
+	"frame": {"x":533,"y":6,"w":26,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":26,"h":49},
@@ -138,7 +138,7 @@
 },
 "mariah_0017.png":
 {
-	"frame": {"x":532,"y":5,"w":32,"h":49},
+	"frame": {"x":565,"y":6,"w":32,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":49},
@@ -146,7 +146,7 @@
 },
 "mariah_0018.png":
 {
-	"frame": {"x":568,"y":5,"w":44,"h":49},
+	"frame": {"x":603,"y":6,"w":44,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":44,"h":49},
@@ -154,7 +154,7 @@
 },
 "mariah_0019.png":
 {
-	"frame": {"x":616,"y":5,"w":44,"h":49},
+	"frame": {"x":653,"y":6,"w":44,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":44,"h":49},
@@ -162,7 +162,7 @@
 },
 "mariah_0020.png":
 {
-	"frame": {"x":664,"y":5,"w":32,"h":49},
+	"frame": {"x":703,"y":6,"w":32,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":49},
@@ -170,7 +170,7 @@
 },
 "mariah_0021.png":
 {
-	"frame": {"x":700,"y":5,"w":20,"h":48},
+	"frame": {"x":741,"y":6,"w":20,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":20,"h":48},
@@ -178,7 +178,7 @@
 },
 "mariah_0022.png":
 {
-	"frame": {"x":724,"y":5,"w":21,"h":48},
+	"frame": {"x":767,"y":6,"w":21,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":21,"h":48},
@@ -186,7 +186,7 @@
 },
 "mariah_0023.png":
 {
-	"frame": {"x":749,"y":5,"w":20,"h":48},
+	"frame": {"x":794,"y":6,"w":20,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":20,"h":48},
@@ -194,7 +194,7 @@
 },
 "mariah_0024.png":
 {
-	"frame": {"x":773,"y":5,"w":25,"h":48},
+	"frame": {"x":820,"y":6,"w":25,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":25,"h":48},
@@ -202,7 +202,7 @@
 },
 "mariah_0025.png":
 {
-	"frame": {"x":802,"y":5,"w":32,"h":48},
+	"frame": {"x":851,"y":6,"w":32,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":48},
@@ -210,7 +210,7 @@
 },
 "mariah_0026.png":
 {
-	"frame": {"x":838,"y":5,"w":32,"h":48},
+	"frame": {"x":889,"y":6,"w":32,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":48},
@@ -218,7 +218,7 @@
 },
 "mariah_0027.png":
 {
-	"frame": {"x":874,"y":5,"w":25,"h":48},
+	"frame": {"x":927,"y":6,"w":25,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":25,"h":48},
@@ -226,7 +226,7 @@
 },
 "mariah_0028.png":
 {
-	"frame": {"x":903,"y":5,"w":26,"h":49},
+	"frame": {"x":958,"y":6,"w":26,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":26,"h":49},
@@ -234,7 +234,7 @@
 },
 "mariah_0029.png":
 {
-	"frame": {"x":933,"y":5,"w":25,"h":49},
+	"frame": {"x":990,"y":6,"w":25,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":25,"h":49},
@@ -242,7 +242,7 @@
 },
 "mariah_0030.png":
 {
-	"frame": {"x":962,"y":5,"w":25,"h":49},
+	"frame": {"x":6,"y":61,"w":25,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":25,"h":49},
@@ -250,7 +250,7 @@
 },
 "mariah_0031.png":
 {
-	"frame": {"x":991,"y":5,"w":25,"h":49},
+	"frame": {"x":37,"y":61,"w":25,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":25,"h":49},
@@ -258,7 +258,7 @@
 },
 "mariah_0032.png":
 {
-	"frame": {"x":5,"y":58,"w":25,"h":49},
+	"frame": {"x":68,"y":61,"w":25,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":25,"h":49},
@@ -266,7 +266,7 @@
 },
 "mariah_0033.png":
 {
-	"frame": {"x":34,"y":58,"w":25,"h":49},
+	"frame": {"x":99,"y":61,"w":25,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":25,"h":49},
@@ -274,7 +274,7 @@
 },
 "mariah_0034.png":
 {
-	"frame": {"x":63,"y":58,"w":28,"h":47},
+	"frame": {"x":130,"y":61,"w":28,"h":47},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":28,"h":47},
@@ -282,7 +282,7 @@
 },
 "mariah_0035.png":
 {
-	"frame": {"x":95,"y":58,"w":28,"h":48},
+	"frame": {"x":164,"y":61,"w":28,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":28,"h":48},
@@ -290,7 +290,7 @@
 },
 "mariah_0036.png":
 {
-	"frame": {"x":127,"y":58,"w":27,"h":49},
+	"frame": {"x":198,"y":61,"w":27,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":27,"h":49},
@@ -298,7 +298,7 @@
 },
 "mariah_0037.png":
 {
-	"frame": {"x":158,"y":58,"w":25,"h":49},
+	"frame": {"x":231,"y":61,"w":25,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":25,"h":49},
@@ -306,7 +306,7 @@
 },
 "mariah_0038.png":
 {
-	"frame": {"x":187,"y":58,"w":26,"h":49},
+	"frame": {"x":262,"y":61,"w":26,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":26,"h":49},
@@ -314,7 +314,7 @@
 },
 "mariah_0039.png":
 {
-	"frame": {"x":217,"y":58,"w":29,"h":49},
+	"frame": {"x":294,"y":61,"w":29,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":29,"h":49},
@@ -322,7 +322,7 @@
 },
 "mariah_0040.png":
 {
-	"frame": {"x":250,"y":58,"w":27,"h":49},
+	"frame": {"x":329,"y":61,"w":27,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":27,"h":49},
@@ -330,7 +330,7 @@
 },
 "mariah_0041.png":
 {
-	"frame": {"x":281,"y":58,"w":25,"h":49},
+	"frame": {"x":362,"y":61,"w":25,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":25,"h":49},
@@ -338,7 +338,7 @@
 },
 "mariah_0042.png":
 {
-	"frame": {"x":310,"y":58,"w":22,"h":48},
+	"frame": {"x":393,"y":61,"w":22,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":48},
@@ -346,7 +346,7 @@
 },
 "mariah_0043.png":
 {
-	"frame": {"x":336,"y":58,"w":24,"h":48},
+	"frame": {"x":421,"y":61,"w":24,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":24,"h":48},
@@ -354,7 +354,7 @@
 },
 "mariah_0044.png":
 {
-	"frame": {"x":364,"y":58,"w":24,"h":48},
+	"frame": {"x":451,"y":61,"w":24,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":24,"h":48},
@@ -362,7 +362,7 @@
 },
 "mariah_0045.png":
 {
-	"frame": {"x":392,"y":58,"w":26,"h":48},
+	"frame": {"x":481,"y":61,"w":26,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":26,"h":48},
@@ -370,7 +370,7 @@
 },
 "mariah_0046.png":
 {
-	"frame": {"x":422,"y":58,"w":24,"h":48},
+	"frame": {"x":513,"y":61,"w":24,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":24,"h":48},
@@ -378,7 +378,7 @@
 },
 "mariah_0047.png":
 {
-	"frame": {"x":450,"y":58,"w":24,"h":48},
+	"frame": {"x":543,"y":61,"w":24,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":24,"h":48},
@@ -386,7 +386,7 @@
 },
 "mariah_0048.png":
 {
-	"frame": {"x":478,"y":58,"w":24,"h":48},
+	"frame": {"x":573,"y":61,"w":24,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":24,"h":48},
@@ -394,7 +394,7 @@
 },
 "mariah_0049.png":
 {
-	"frame": {"x":506,"y":58,"w":26,"h":48},
+	"frame": {"x":603,"y":61,"w":26,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":26,"h":48},
@@ -402,7 +402,7 @@
 },
 "mariah_0050.png":
 {
-	"frame": {"x":536,"y":58,"w":28,"h":48},
+	"frame": {"x":635,"y":61,"w":28,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":28,"h":48},
@@ -410,7 +410,7 @@
 },
 "mariah_0051.png":
 {
-	"frame": {"x":568,"y":58,"w":25,"h":48},
+	"frame": {"x":669,"y":61,"w":25,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":25,"h":48},
@@ -418,7 +418,7 @@
 },
 "mariah_0052.png":
 {
-	"frame": {"x":597,"y":58,"w":27,"h":49},
+	"frame": {"x":700,"y":61,"w":27,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":27,"h":49},
@@ -426,7 +426,7 @@
 },
 "mariah_0053.png":
 {
-	"frame": {"x":628,"y":58,"w":25,"h":49},
+	"frame": {"x":733,"y":61,"w":25,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":25,"h":49},
@@ -434,7 +434,7 @@
 },
 "mariah_0054.png":
 {
-	"frame": {"x":657,"y":58,"w":26,"h":49},
+	"frame": {"x":764,"y":61,"w":26,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":26,"h":49},
@@ -442,7 +442,7 @@
 },
 "mariah_0055.png":
 {
-	"frame": {"x":687,"y":58,"w":29,"h":49},
+	"frame": {"x":796,"y":61,"w":29,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":29,"h":49},
@@ -450,7 +450,7 @@
 },
 "mariah_0056.png":
 {
-	"frame": {"x":720,"y":58,"w":27,"h":49},
+	"frame": {"x":831,"y":61,"w":27,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":27,"h":49},
@@ -458,7 +458,7 @@
 },
 "mariah_0057.png":
 {
-	"frame": {"x":751,"y":58,"w":25,"h":49},
+	"frame": {"x":864,"y":61,"w":25,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":25,"h":49},
@@ -466,7 +466,7 @@
 },
 "mariah_0058.png":
 {
-	"frame": {"x":780,"y":58,"w":20,"h":48},
+	"frame": {"x":895,"y":61,"w":20,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":20,"h":48},
@@ -474,7 +474,7 @@
 },
 "mariah_0059.png":
 {
-	"frame": {"x":804,"y":58,"w":24,"h":48},
+	"frame": {"x":921,"y":61,"w":24,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":24,"h":48},
@@ -482,7 +482,7 @@
 },
 "mariah_0060.png":
 {
-	"frame": {"x":832,"y":58,"w":28,"h":47},
+	"frame": {"x":951,"y":61,"w":28,"h":47},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":28,"h":47},
@@ -490,7 +490,7 @@
 },
 "mariah_0061.png":
 {
-	"frame": {"x":864,"y":58,"w":28,"h":47},
+	"frame": {"x":985,"y":61,"w":28,"h":47},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":28,"h":47},
@@ -498,7 +498,7 @@
 },
 "mariah_0062.png":
 {
-	"frame": {"x":896,"y":58,"w":27,"h":48},
+	"frame": {"x":6,"y":116,"w":27,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":27,"h":48},
@@ -506,7 +506,7 @@
 },
 "mariah_0063.png":
 {
-	"frame": {"x":927,"y":58,"w":26,"h":49},
+	"frame": {"x":39,"y":116,"w":26,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":26,"h":49},
@@ -514,7 +514,7 @@
 },
 "mariah_0064.png":
 {
-	"frame": {"x":957,"y":58,"w":28,"h":48},
+	"frame": {"x":71,"y":116,"w":28,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":28,"h":48},
@@ -522,7 +522,7 @@
 },
 "mariah_0065.png":
 {
-	"frame": {"x":989,"y":58,"w":28,"h":47},
+	"frame": {"x":105,"y":116,"w":28,"h":47},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":28,"h":47},
@@ -530,7 +530,7 @@
 },
 "mariah_0066.png":
 {
-	"frame": {"x":5,"y":111,"w":27,"h":48},
+	"frame": {"x":139,"y":116,"w":27,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":27,"h":48},
@@ -538,7 +538,7 @@
 },
 "mariah_0067.png":
 {
-	"frame": {"x":36,"y":111,"w":26,"h":49},
+	"frame": {"x":172,"y":116,"w":26,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":26,"h":49},
@@ -546,23 +546,15 @@
 },
 "mariah_0068.png":
 {
-	"frame": {"x":66,"y":111,"w":28,"h":48},
+	"frame": {"x":204,"y":116,"w":24,"h":47},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":28,"h":48},
-	"sourceSize": {"w":28,"h":48}
-},
-"mariah_0069.png":
-{
-	"frame": {"x":98,"y":111,"w":18,"h":18},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":18,"h":18},
-	"sourceSize": {"w":18,"h":18}
+	"spriteSourceSize": {"x":0,"y":0,"w":24,"h":47},
+	"sourceSize": {"w":24,"h":47}
 },
 "mariah_0070.png":
 {
-	"frame": {"x":120,"y":111,"w":23,"h":48},
+	"frame": {"x":234,"y":116,"w":23,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":23,"h":48},
@@ -570,7 +562,7 @@
 },
 "mariah_0071.png":
 {
-	"frame": {"x":147,"y":111,"w":22,"h":47},
+	"frame": {"x":263,"y":116,"w":22,"h":47},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":47},
@@ -578,7 +570,7 @@
 },
 "mariah_0072.png":
 {
-	"frame": {"x":173,"y":111,"w":25,"h":48},
+	"frame": {"x":291,"y":116,"w":25,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":25,"h":48},
@@ -586,7 +578,7 @@
 },
 "mariah_0073.png":
 {
-	"frame": {"x":202,"y":111,"w":22,"h":48},
+	"frame": {"x":322,"y":116,"w":22,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":48},
@@ -594,7 +586,7 @@
 },
 "mariah_0074.png":
 {
-	"frame": {"x":228,"y":111,"w":20,"h":48},
+	"frame": {"x":350,"y":116,"w":20,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":20,"h":48},
@@ -602,7 +594,7 @@
 },
 "mariah_0075.png":
 {
-	"frame": {"x":252,"y":111,"w":21,"h":47},
+	"frame": {"x":376,"y":116,"w":21,"h":47},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":21,"h":47},
@@ -610,7 +602,7 @@
 },
 "mariah_0076.png":
 {
-	"frame": {"x":277,"y":111,"w":20,"h":46},
+	"frame": {"x":403,"y":116,"w":20,"h":46},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":20,"h":46},
@@ -618,23 +610,15 @@
 },
 "mariah_0077.png":
 {
-	"frame": {"x":301,"y":111,"w":27,"h":47},
+	"frame": {"x":429,"y":116,"w":27,"h":47},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":27,"h":47},
 	"sourceSize": {"w":27,"h":47}
 },
-"mariah_0078.png":
-{
-	"frame": {"x":332,"y":111,"w":24,"h":47},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":24,"h":47},
-	"sourceSize": {"w":24,"h":47}
-},
 "mariah_0079.png":
 {
-	"frame": {"x":360,"y":111,"w":28,"h":49},
+	"frame": {"x":462,"y":116,"w":28,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":28,"h":49},
@@ -642,7 +626,7 @@
 },
 "mariah_0080.png":
 {
-	"frame": {"x":392,"y":111,"w":28,"h":49},
+	"frame": {"x":496,"y":116,"w":28,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":28,"h":49},
@@ -650,7 +634,7 @@
 },
 "mariah_0081.png":
 {
-	"frame": {"x":424,"y":111,"w":27,"h":50},
+	"frame": {"x":530,"y":116,"w":27,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":27,"h":50},
@@ -658,7 +642,7 @@
 },
 "mariah_0082.png":
 {
-	"frame": {"x":455,"y":111,"w":25,"h":50},
+	"frame": {"x":563,"y":116,"w":25,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":25,"h":50},
@@ -666,7 +650,7 @@
 },
 "mariah_0083.png":
 {
-	"frame": {"x":484,"y":111,"w":28,"h":50},
+	"frame": {"x":594,"y":116,"w":28,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":28,"h":50},
@@ -674,7 +658,7 @@
 },
 "mariah_0084.png":
 {
-	"frame": {"x":516,"y":111,"w":28,"h":49},
+	"frame": {"x":628,"y":116,"w":28,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":28,"h":49},
@@ -682,7 +666,7 @@
 },
 "mariah_0085.png":
 {
-	"frame": {"x":548,"y":111,"w":27,"h":50},
+	"frame": {"x":662,"y":116,"w":27,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":27,"h":50},
@@ -690,7 +674,7 @@
 },
 "mariah_0086.png":
 {
-	"frame": {"x":579,"y":111,"w":25,"h":50},
+	"frame": {"x":695,"y":116,"w":25,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":25,"h":50},
@@ -698,7 +682,7 @@
 },
 "mariah_0087.png":
 {
-	"frame": {"x":608,"y":111,"w":28,"h":50},
+	"frame": {"x":726,"y":116,"w":28,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":28,"h":50},
@@ -706,7 +690,7 @@
 },
 "mariah_0088.png":
 {
-	"frame": {"x":640,"y":111,"w":20,"h":48},
+	"frame": {"x":760,"y":116,"w":20,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":20,"h":48},
@@ -714,7 +698,7 @@
 },
 "mariah_0089.png":
 {
-	"frame": {"x":664,"y":111,"w":21,"h":47},
+	"frame": {"x":786,"y":116,"w":21,"h":47},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":21,"h":47},
@@ -722,7 +706,7 @@
 },
 "mariah_0090.png":
 {
-	"frame": {"x":689,"y":111,"w":25,"h":48},
+	"frame": {"x":813,"y":116,"w":25,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":25,"h":48},
@@ -730,7 +714,7 @@
 },
 "mariah_0091.png":
 {
-	"frame": {"x":718,"y":111,"w":21,"h":48},
+	"frame": {"x":844,"y":116,"w":21,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":21,"h":48},
@@ -738,7 +722,7 @@
 },
 "mariah_0092.png":
 {
-	"frame": {"x":743,"y":111,"w":19,"h":48},
+	"frame": {"x":871,"y":116,"w":19,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":19,"h":48},
@@ -746,7 +730,7 @@
 },
 "mariah_0093.png":
 {
-	"frame": {"x":766,"y":111,"w":21,"h":47},
+	"frame": {"x":896,"y":116,"w":21,"h":47},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":21,"h":47},
@@ -754,7 +738,7 @@
 },
 "mariah_0094.png":
 {
-	"frame": {"x":791,"y":111,"w":20,"h":46},
+	"frame": {"x":923,"y":116,"w":20,"h":46},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":20,"h":46},
@@ -762,7 +746,7 @@
 },
 "mariah_0095.png":
 {
-	"frame": {"x":815,"y":111,"w":27,"h":47},
+	"frame": {"x":949,"y":116,"w":27,"h":47},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":27,"h":47},
@@ -770,7 +754,7 @@
 },
 "mariah_0096.png":
 {
-	"frame": {"x":846,"y":111,"w":24,"h":47},
+	"frame": {"x":982,"y":116,"w":24,"h":47},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":24,"h":47},
@@ -778,7 +762,7 @@
 },
 "mariah_0097.png":
 {
-	"frame": {"x":874,"y":111,"w":33,"h":48},
+	"frame": {"x":6,"y":172,"w":33,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":33,"h":48},
@@ -786,7 +770,7 @@
 },
 "mariah_0098.png":
 {
-	"frame": {"x":911,"y":111,"w":36,"h":48},
+	"frame": {"x":45,"y":172,"w":36,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":36,"h":48},
@@ -794,7 +778,7 @@
 },
 "mariah_0099.png":
 {
-	"frame": {"x":951,"y":111,"w":28,"h":47},
+	"frame": {"x":87,"y":172,"w":28,"h":47},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":28,"h":47},
@@ -802,7 +786,7 @@
 },
 "mariah_0100.png":
 {
-	"frame": {"x":983,"y":111,"w":26,"h":47},
+	"frame": {"x":121,"y":172,"w":26,"h":47},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":26,"h":47},
@@ -810,7 +794,7 @@
 },
 "mariah_0101.png":
 {
-	"frame": {"x":5,"y":165,"w":26,"h":47},
+	"frame": {"x":153,"y":172,"w":26,"h":47},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":26,"h":47},
@@ -818,7 +802,7 @@
 },
 "mariah_0102.png":
 {
-	"frame": {"x":35,"y":165,"w":27,"h":47},
+	"frame": {"x":185,"y":172,"w":27,"h":47},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":27,"h":47},
@@ -826,7 +810,7 @@
 },
 "mariah_0103.png":
 {
-	"frame": {"x":66,"y":165,"w":22,"h":48},
+	"frame": {"x":218,"y":172,"w":22,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":48},
@@ -834,7 +818,7 @@
 },
 "mariah_0104.png":
 {
-	"frame": {"x":92,"y":165,"w":32,"h":48},
+	"frame": {"x":246,"y":172,"w":32,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":48},
@@ -842,7 +826,7 @@
 },
 "mariah_0105.png":
 {
-	"frame": {"x":128,"y":165,"w":33,"h":48},
+	"frame": {"x":284,"y":172,"w":33,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":33,"h":48},
@@ -850,7 +834,7 @@
 },
 "mariah_0106.png":
 {
-	"frame": {"x":165,"y":165,"w":32,"h":48},
+	"frame": {"x":323,"y":172,"w":32,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":48},
@@ -858,7 +842,7 @@
 },
 "mariah_0107.png":
 {
-	"frame": {"x":201,"y":165,"w":24,"h":47},
+	"frame": {"x":361,"y":172,"w":24,"h":47},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":24,"h":47},
@@ -866,7 +850,7 @@
 },
 "mariah_0108.png":
 {
-	"frame": {"x":229,"y":165,"w":25,"h":47},
+	"frame": {"x":391,"y":172,"w":25,"h":47},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":25,"h":47},
@@ -874,7 +858,7 @@
 },
 "mariah_0109.png":
 {
-	"frame": {"x":258,"y":165,"w":28,"h":49},
+	"frame": {"x":422,"y":172,"w":28,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":28,"h":49},
@@ -882,7 +866,7 @@
 },
 "mariah_0110.png":
 {
-	"frame": {"x":290,"y":165,"w":24,"h":49},
+	"frame": {"x":456,"y":172,"w":24,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":24,"h":49},
@@ -890,7 +874,7 @@
 },
 "mariah_0111.png":
 {
-	"frame": {"x":318,"y":165,"w":31,"h":49},
+	"frame": {"x":486,"y":172,"w":31,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":31,"h":49},
@@ -898,7 +882,7 @@
 },
 "mariah_0112.png":
 {
-	"frame": {"x":353,"y":165,"w":34,"h":49},
+	"frame": {"x":523,"y":172,"w":34,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":34,"h":49},
@@ -906,7 +890,7 @@
 },
 "mariah_0113.png":
 {
-	"frame": {"x":391,"y":165,"w":24,"h":48},
+	"frame": {"x":563,"y":172,"w":24,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":24,"h":48},
@@ -914,7 +898,7 @@
 },
 "mariah_0114.png":
 {
-	"frame": {"x":419,"y":165,"w":24,"h":47},
+	"frame": {"x":593,"y":172,"w":24,"h":47},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":24,"h":47},
@@ -922,7 +906,7 @@
 },
 "mariah_0115.png":
 {
-	"frame": {"x":447,"y":165,"w":20,"h":48},
+	"frame": {"x":623,"y":172,"w":20,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":20,"h":48},
@@ -930,7 +914,7 @@
 },
 "mariah_0116.png":
 {
-	"frame": {"x":471,"y":165,"w":32,"h":48},
+	"frame": {"x":649,"y":172,"w":32,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":48},
@@ -938,7 +922,7 @@
 },
 "mariah_0117.png":
 {
-	"frame": {"x":507,"y":165,"w":33,"h":48},
+	"frame": {"x":687,"y":172,"w":33,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":33,"h":48},
@@ -946,7 +930,7 @@
 },
 "mariah_0118.png":
 {
-	"frame": {"x":544,"y":165,"w":32,"h":48},
+	"frame": {"x":726,"y":172,"w":32,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":48},
@@ -954,7 +938,7 @@
 },
 "mariah_0119.png":
 {
-	"frame": {"x":580,"y":165,"w":24,"h":47},
+	"frame": {"x":764,"y":172,"w":24,"h":47},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":24,"h":47},
@@ -962,7 +946,7 @@
 },
 "mariah_0120.png":
 {
-	"frame": {"x":608,"y":165,"w":25,"h":47},
+	"frame": {"x":794,"y":172,"w":25,"h":47},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":25,"h":47},
@@ -970,7 +954,7 @@
 },
 "mariah_0121.png":
 {
-	"frame": {"x":951,"y":111,"w":28,"h":47},
+	"frame": {"x":87,"y":172,"w":28,"h":47},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":28,"h":47},
@@ -978,7 +962,7 @@
 },
 "mariah_0122.png":
 {
-	"frame": {"x":637,"y":165,"w":28,"h":48},
+	"frame": {"x":825,"y":172,"w":28,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":28,"h":48},
@@ -986,7 +970,7 @@
 },
 "mariah_0123.png":
 {
-	"frame": {"x":669,"y":165,"w":25,"h":49},
+	"frame": {"x":859,"y":172,"w":25,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":25,"h":49},
@@ -994,7 +978,7 @@
 },
 "mariah_0124.png":
 {
-	"frame": {"x":698,"y":165,"w":25,"h":49},
+	"frame": {"x":890,"y":172,"w":25,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":25,"h":49},
@@ -1002,7 +986,7 @@
 },
 "mariah_0125.png":
 {
-	"frame": {"x":727,"y":165,"w":28,"h":49},
+	"frame": {"x":921,"y":172,"w":28,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":28,"h":49},
@@ -1010,7 +994,7 @@
 },
 "mariah_0126.png":
 {
-	"frame": {"x":759,"y":165,"w":26,"h":49},
+	"frame": {"x":955,"y":172,"w":26,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":26,"h":49},
@@ -1018,7 +1002,7 @@
 },
 "mariah_0127.png":
 {
-	"frame": {"x":789,"y":165,"w":27,"h":49},
+	"frame": {"x":987,"y":172,"w":27,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":27,"h":49},
@@ -1026,7 +1010,7 @@
 },
 "mariah_0128.png":
 {
-	"frame": {"x":820,"y":165,"w":27,"h":49},
+	"frame": {"x":6,"y":227,"w":27,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":27,"h":49},
@@ -1034,7 +1018,7 @@
 },
 "mariah_0129.png":
 {
-	"frame": {"x":851,"y":165,"w":28,"h":49},
+	"frame": {"x":39,"y":227,"w":28,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":28,"h":49},
@@ -1042,7 +1026,7 @@
 },
 "mariah_0130.png":
 {
-	"frame": {"x":883,"y":165,"w":28,"h":49},
+	"frame": {"x":73,"y":227,"w":28,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":28,"h":49},
@@ -1050,7 +1034,7 @@
 },
 "mariah_0131.png":
 {
-	"frame": {"x":915,"y":165,"w":25,"h":49},
+	"frame": {"x":107,"y":227,"w":25,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":25,"h":49},
@@ -1058,7 +1042,7 @@
 },
 "mariah_0132.png":
 {
-	"frame": {"x":944,"y":165,"w":25,"h":49},
+	"frame": {"x":138,"y":227,"w":25,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":25,"h":49},
@@ -1066,7 +1050,7 @@
 },
 "mariah_0133.png":
 {
-	"frame": {"x":915,"y":165,"w":25,"h":49},
+	"frame": {"x":107,"y":227,"w":25,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":25,"h":49},
@@ -1074,7 +1058,7 @@
 },
 "mariah_0134.png":
 {
-	"frame": {"x":973,"y":165,"w":22,"h":48},
+	"frame": {"x":169,"y":227,"w":22,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":48},
@@ -1082,7 +1066,7 @@
 },
 "mariah_0135.png":
 {
-	"frame": {"x":5,"y":218,"w":24,"h":48},
+	"frame": {"x":197,"y":227,"w":24,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":24,"h":48},
@@ -1090,7 +1074,7 @@
 },
 "mariah_0136.png":
 {
-	"frame": {"x":33,"y":218,"w":32,"h":48},
+	"frame": {"x":227,"y":227,"w":32,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":48},
@@ -1098,7 +1082,7 @@
 },
 "mariah_0137.png":
 {
-	"frame": {"x":69,"y":218,"w":35,"h":48},
+	"frame": {"x":265,"y":227,"w":35,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":35,"h":48},
@@ -1106,7 +1090,7 @@
 },
 "mariah_0138.png":
 {
-	"frame": {"x":108,"y":218,"w":32,"h":48},
+	"frame": {"x":306,"y":227,"w":32,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":48},
@@ -1114,7 +1098,7 @@
 },
 "mariah_0139.png":
 {
-	"frame": {"x":144,"y":218,"w":34,"h":48},
+	"frame": {"x":344,"y":227,"w":34,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":34,"h":48},
@@ -1122,7 +1106,7 @@
 },
 "mariah_0140.png":
 {
-	"frame": {"x":182,"y":218,"w":36,"h":48},
+	"frame": {"x":384,"y":227,"w":36,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":36,"h":48},
@@ -1130,7 +1114,7 @@
 },
 "mariah_0141.png":
 {
-	"frame": {"x":222,"y":218,"w":38,"h":48},
+	"frame": {"x":426,"y":227,"w":38,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":38,"h":48},
@@ -1138,7 +1122,7 @@
 },
 "mariah_0142.png":
 {
-	"frame": {"x":264,"y":218,"w":35,"h":48},
+	"frame": {"x":470,"y":227,"w":35,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":35,"h":48},
@@ -1146,7 +1130,7 @@
 },
 "mariah_0143.png":
 {
-	"frame": {"x":303,"y":218,"w":34,"h":48},
+	"frame": {"x":511,"y":227,"w":34,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":34,"h":48},
@@ -1154,7 +1138,7 @@
 },
 "mariah_0144.png":
 {
-	"frame": {"x":341,"y":218,"w":35,"h":48},
+	"frame": {"x":551,"y":227,"w":35,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":35,"h":48},
@@ -1162,7 +1146,7 @@
 },
 "mariah_0145.png":
 {
-	"frame": {"x":380,"y":218,"w":34,"h":48},
+	"frame": {"x":592,"y":227,"w":34,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":34,"h":48},
@@ -1170,7 +1154,7 @@
 },
 "mariah_0146.png":
 {
-	"frame": {"x":418,"y":218,"w":35,"h":46},
+	"frame": {"x":632,"y":227,"w":35,"h":46},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":35,"h":46},
@@ -1178,7 +1162,7 @@
 },
 "mariah_0147.png":
 {
-	"frame": {"x":457,"y":218,"w":28,"h":49},
+	"frame": {"x":673,"y":227,"w":28,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":28,"h":49},
@@ -1186,7 +1170,7 @@
 },
 "mariah_0148.png":
 {
-	"frame": {"x":489,"y":218,"w":25,"h":50},
+	"frame": {"x":707,"y":227,"w":25,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":25,"h":50},
@@ -1194,7 +1178,7 @@
 },
 "mariah_0149.png":
 {
-	"frame": {"x":518,"y":218,"w":26,"h":48},
+	"frame": {"x":738,"y":227,"w":26,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":26,"h":48},
@@ -1202,7 +1186,7 @@
 },
 "mariah_0150.png":
 {
-	"frame": {"x":548,"y":218,"w":24,"h":49},
+	"frame": {"x":770,"y":227,"w":24,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":24,"h":49},
@@ -1210,7 +1194,7 @@
 },
 "mariah_0151.png":
 {
-	"frame": {"x":576,"y":218,"w":23,"h":49},
+	"frame": {"x":800,"y":227,"w":23,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":23,"h":49},
@@ -1218,7 +1202,7 @@
 },
 "mariah_0152.png":
 {
-	"frame": {"x":603,"y":218,"w":23,"h":49},
+	"frame": {"x":829,"y":227,"w":23,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":23,"h":49},
@@ -1226,7 +1210,7 @@
 },
 "mariah_0153.png":
 {
-	"frame": {"x":630,"y":218,"w":23,"h":49},
+	"frame": {"x":858,"y":227,"w":23,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":23,"h":49},
@@ -1234,7 +1218,7 @@
 },
 "mariah_0154.png":
 {
-	"frame": {"x":657,"y":218,"w":24,"h":49},
+	"frame": {"x":887,"y":227,"w":24,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":24,"h":49},
@@ -1242,7 +1226,7 @@
 },
 "mariah_0155.png":
 {
-	"frame": {"x":685,"y":218,"w":24,"h":49},
+	"frame": {"x":917,"y":227,"w":24,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":24,"h":49},
@@ -1250,7 +1234,7 @@
 },
 "mariah_0156.png":
 {
-	"frame": {"x":713,"y":218,"w":23,"h":49},
+	"frame": {"x":947,"y":227,"w":23,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":23,"h":49},
@@ -1258,7 +1242,7 @@
 },
 "mariah_0157.png":
 {
-	"frame": {"x":740,"y":218,"w":24,"h":49},
+	"frame": {"x":976,"y":227,"w":24,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":24,"h":49},
@@ -1266,7 +1250,7 @@
 },
 "mariah_0158.png":
 {
-	"frame": {"x":768,"y":218,"w":25,"h":49},
+	"frame": {"x":6,"y":283,"w":25,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":25,"h":49},
@@ -1274,7 +1258,7 @@
 },
 "mariah_0159.png":
 {
-	"frame": {"x":797,"y":218,"w":24,"h":49},
+	"frame": {"x":37,"y":283,"w":24,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":24,"h":49},
@@ -1282,7 +1266,7 @@
 },
 "mariah_0160.png":
 {
-	"frame": {"x":825,"y":218,"w":21,"h":48},
+	"frame": {"x":67,"y":283,"w":21,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":21,"h":48},
@@ -1290,7 +1274,7 @@
 },
 "mariah_0161.png":
 {
-	"frame": {"x":850,"y":218,"w":25,"h":48},
+	"frame": {"x":94,"y":283,"w":25,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":25,"h":48},
@@ -1298,7 +1282,7 @@
 },
 "mariah_0162.png":
 {
-	"frame": {"x":879,"y":218,"w":32,"h":48},
+	"frame": {"x":125,"y":283,"w":32,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":48},
@@ -1306,7 +1290,7 @@
 },
 "mariah_0163.png":
 {
-	"frame": {"x":915,"y":218,"w":35,"h":48},
+	"frame": {"x":163,"y":283,"w":35,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":35,"h":48},
@@ -1314,7 +1298,7 @@
 },
 "mariah_0164.png":
 {
-	"frame": {"x":954,"y":218,"w":35,"h":48},
+	"frame": {"x":204,"y":283,"w":35,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":35,"h":48},
@@ -1322,7 +1306,7 @@
 },
 "mariah_0165.png":
 {
-	"frame": {"x":5,"y":272,"w":32,"h":48},
+	"frame": {"x":245,"y":283,"w":32,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":48},
@@ -1330,7 +1314,7 @@
 },
 "mariah_0166.png":
 {
-	"frame": {"x":41,"y":272,"w":34,"h":48},
+	"frame": {"x":283,"y":283,"w":34,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":34,"h":48},
@@ -1338,7 +1322,7 @@
 },
 "mariah_0167.png":
 {
-	"frame": {"x":79,"y":272,"w":36,"h":48},
+	"frame": {"x":323,"y":283,"w":36,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":36,"h":48},
@@ -1346,7 +1330,7 @@
 },
 "mariah_0168.png":
 {
-	"frame": {"x":119,"y":272,"w":38,"h":48},
+	"frame": {"x":365,"y":283,"w":38,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":38,"h":48},
@@ -1354,7 +1338,7 @@
 },
 "mariah_0169.png":
 {
-	"frame": {"x":161,"y":272,"w":35,"h":48},
+	"frame": {"x":409,"y":283,"w":35,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":35,"h":48},
@@ -1362,7 +1346,7 @@
 },
 "mariah_0170.png":
 {
-	"frame": {"x":200,"y":272,"w":34,"h":48},
+	"frame": {"x":450,"y":283,"w":34,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":34,"h":48},
@@ -1370,7 +1354,7 @@
 },
 "mariah_0171.png":
 {
-	"frame": {"x":238,"y":272,"w":35,"h":48},
+	"frame": {"x":490,"y":283,"w":35,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":35,"h":48},
@@ -1378,7 +1362,7 @@
 },
 "mariah_0172.png":
 {
-	"frame": {"x":277,"y":272,"w":36,"h":48},
+	"frame": {"x":531,"y":283,"w":36,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":36,"h":48},
@@ -1386,7 +1370,7 @@
 },
 "mariah_0173.png":
 {
-	"frame": {"x":317,"y":272,"w":28,"h":49},
+	"frame": {"x":573,"y":283,"w":28,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":28,"h":49},
@@ -1394,7 +1378,7 @@
 },
 "mariah_0174.png":
 {
-	"frame": {"x":349,"y":272,"w":27,"h":48},
+	"frame": {"x":607,"y":283,"w":27,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":27,"h":48},
@@ -1402,7 +1386,7 @@
 },
 "mariah_0175.png":
 {
-	"frame": {"x":380,"y":272,"w":27,"h":40},
+	"frame": {"x":640,"y":283,"w":27,"h":40},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":27,"h":40},
@@ -1410,7 +1394,7 @@
 },
 "mariah_0176.png":
 {
-	"frame": {"x":411,"y":272,"w":34,"h":39},
+	"frame": {"x":673,"y":283,"w":34,"h":39},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":34,"h":39},
@@ -1418,7 +1402,7 @@
 },
 "mariah_0177.png":
 {
-	"frame": {"x":449,"y":272,"w":27,"h":36},
+	"frame": {"x":713,"y":283,"w":27,"h":36},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":27,"h":36},
@@ -1426,7 +1410,7 @@
 },
 "mariah_0178.png":
 {
-	"frame": {"x":480,"y":272,"w":29,"h":29},
+	"frame": {"x":746,"y":283,"w":29,"h":29},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":29,"h":29},
@@ -1434,7 +1418,7 @@
 },
 "mariah_0179.png":
 {
-	"frame": {"x":513,"y":272,"w":25,"h":107},
+	"frame": {"x":781,"y":283,"w":25,"h":107},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":25,"h":107},
@@ -1442,7 +1426,7 @@
 },
 "mariah_0180.png":
 {
-	"frame": {"x":542,"y":272,"w":25,"h":99},
+	"frame": {"x":812,"y":283,"w":25,"h":99},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":25,"h":99},
@@ -1450,7 +1434,7 @@
 },
 "mariah_0181.png":
 {
-	"frame": {"x":571,"y":272,"w":25,"h":99},
+	"frame": {"x":843,"y":283,"w":25,"h":99},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":25,"h":99},
@@ -1458,7 +1442,7 @@
 },
 "mariah_0182.png":
 {
-	"frame": {"x":600,"y":272,"w":25,"h":93},
+	"frame": {"x":874,"y":283,"w":25,"h":93},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":25,"h":93},
@@ -1466,7 +1450,7 @@
 },
 "mariah_0183.png":
 {
-	"frame": {"x":629,"y":272,"w":25,"h":93},
+	"frame": {"x":905,"y":283,"w":25,"h":93},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":25,"h":93},
@@ -1474,7 +1458,7 @@
 },
 "mariah_0184.png":
 {
-	"frame": {"x":658,"y":272,"w":65,"h":68},
+	"frame": {"x":936,"y":283,"w":65,"h":68},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":65,"h":68},
@@ -1482,7 +1466,7 @@
 },
 "mariah_0185.png":
 {
-	"frame": {"x":727,"y":272,"w":93,"h":47},
+	"frame": {"x":6,"y":396,"w":93,"h":47},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":93,"h":47},
@@ -1490,7 +1474,7 @@
 },
 "mariah_0186.png":
 {
-	"frame": {"x":824,"y":272,"w":87,"h":48},
+	"frame": {"x":105,"y":396,"w":87,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":87,"h":48},
@@ -1498,7 +1482,7 @@
 },
 "mariah_0187.png":
 {
-	"frame": {"x":915,"y":272,"w":93,"h":49},
+	"frame": {"x":198,"y":396,"w":93,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":93,"h":49},
@@ -1506,7 +1490,7 @@
 },
 "mariah_0188.png":
 {
-	"frame": {"x":5,"y":383,"w":93,"h":49},
+	"frame": {"x":297,"y":396,"w":93,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":93,"h":49},
@@ -1514,7 +1498,7 @@
 },
 "mariah_0189.png":
 {
-	"frame": {"x":102,"y":383,"w":93,"h":49},
+	"frame": {"x":396,"y":396,"w":93,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":93,"h":49},
@@ -1522,7 +1506,7 @@
 },
 "mariah_0190.png":
 {
-	"frame": {"x":199,"y":383,"w":93,"h":49},
+	"frame": {"x":495,"y":396,"w":93,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":93,"h":49},
@@ -1530,7 +1514,7 @@
 },
 "mariah_0191.png":
 {
-	"frame": {"x":296,"y":383,"w":93,"h":49},
+	"frame": {"x":594,"y":396,"w":93,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":93,"h":49},
@@ -1538,7 +1522,7 @@
 },
 "mariah_0192.png":
 {
-	"frame": {"x":393,"y":383,"w":93,"h":49},
+	"frame": {"x":693,"y":396,"w":93,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":93,"h":49},
@@ -1546,7 +1530,7 @@
 },
 "mariah_0193.png":
 {
-	"frame": {"x":490,"y":383,"w":88,"h":48},
+	"frame": {"x":792,"y":396,"w":88,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":88,"h":48},
@@ -1554,7 +1538,7 @@
 },
 "mariah_0194.png":
 {
-	"frame": {"x":582,"y":383,"w":91,"h":48},
+	"frame": {"x":886,"y":396,"w":91,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":91,"h":48},
@@ -1562,7 +1546,7 @@
 },
 "mariah_0195.png":
 {
-	"frame": {"x":677,"y":383,"w":26,"h":93},
+	"frame": {"x":983,"y":396,"w":26,"h":93},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":26,"h":93},
@@ -1570,7 +1554,7 @@
 },
 "mariah_0196.png":
 {
-	"frame": {"x":707,"y":383,"w":26,"h":93},
+	"frame": {"x":6,"y":495,"w":26,"h":93},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":26,"h":93},
@@ -1578,7 +1562,7 @@
 },
 "mariah_0197.png":
 {
-	"frame": {"x":737,"y":383,"w":24,"h":93},
+	"frame": {"x":38,"y":495,"w":24,"h":93},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":24,"h":93},
@@ -1586,7 +1570,7 @@
 },
 "mariah_0198.png":
 {
-	"frame": {"x":765,"y":383,"w":24,"h":93},
+	"frame": {"x":68,"y":495,"w":24,"h":93},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":24,"h":93},
@@ -1594,7 +1578,7 @@
 },
 "mariah_0199.png":
 {
-	"frame": {"x":793,"y":383,"w":65,"h":79},
+	"frame": {"x":98,"y":495,"w":65,"h":79},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":65,"h":79},
@@ -1602,7 +1586,7 @@
 },
 "mariah_0200.png":
 {
-	"frame": {"x":862,"y":383,"w":24,"h":96},
+	"frame": {"x":169,"y":495,"w":24,"h":96},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":24,"h":96},
@@ -1610,7 +1594,7 @@
 },
 "mariah_0201.png":
 {
-	"frame": {"x":890,"y":383,"w":93,"h":48},
+	"frame": {"x":199,"y":495,"w":93,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":93,"h":48},
@@ -1618,7 +1602,7 @@
 },
 "mariah_0202.png":
 {
-	"frame": {"x":5,"y":483,"w":87,"h":54},
+	"frame": {"x":298,"y":495,"w":87,"h":54},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":87,"h":54},
@@ -1626,7 +1610,7 @@
 },
 "mariah_0203.png":
 {
-	"frame": {"x":96,"y":483,"w":93,"h":49},
+	"frame": {"x":391,"y":495,"w":93,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":93,"h":49},
@@ -1634,7 +1618,7 @@
 },
 "mariah_0204.png":
 {
-	"frame": {"x":193,"y":483,"w":93,"h":49},
+	"frame": {"x":490,"y":495,"w":93,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":93,"h":49},
@@ -1642,7 +1626,7 @@
 },
 "mariah_0205.png":
 {
-	"frame": {"x":290,"y":483,"w":93,"h":49},
+	"frame": {"x":589,"y":495,"w":93,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":93,"h":49},
@@ -1650,7 +1634,7 @@
 },
 "mariah_0206.png":
 {
-	"frame": {"x":387,"y":483,"w":93,"h":49},
+	"frame": {"x":688,"y":495,"w":93,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":93,"h":49},
@@ -1658,7 +1642,7 @@
 },
 "mariah_0207.png":
 {
-	"frame": {"x":484,"y":483,"w":93,"h":49},
+	"frame": {"x":787,"y":495,"w":93,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":93,"h":49},
@@ -1666,7 +1650,7 @@
 },
 "mariah_0208.png":
 {
-	"frame": {"x":581,"y":483,"w":93,"h":49},
+	"frame": {"x":886,"y":495,"w":93,"h":49},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":93,"h":49},
@@ -1674,7 +1658,7 @@
 },
 "mariah_0209.png":
 {
-	"frame": {"x":678,"y":483,"w":88,"h":48},
+	"frame": {"x":6,"y":597,"w":88,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":88,"h":48},
@@ -1682,7 +1666,7 @@
 },
 "mariah_0210.png":
 {
-	"frame": {"x":770,"y":483,"w":91,"h":48},
+	"frame": {"x":100,"y":597,"w":91,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":91,"h":48},
@@ -1695,6 +1679,6 @@
 	"format": "RGBA8888",
 	"size": {"w":1024,"h":1024},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:23f847746f900e5fec4d668e031c2768:d9fb3b154df72060e29506adb7aa5b9d:dbd3198849a5427fb5f25d3788826af6$"
+	"smartupdate": "$TexturePacker:SmartUpdate:f286bd952902472ed32e29c74ff33c75:47da30b05b8e4ab13d8ce30bafb31053:dbd3198849a5427fb5f25d3788826af6$"
 }
 }
