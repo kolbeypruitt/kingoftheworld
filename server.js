@@ -102,4 +102,4 @@ eurecaServer.exports.handleKeys = function (keys) {
 		//keep last known state so we can send it to new connected clients
 	}
 }
-server.listen(process.env.PORT);
+server.listen(process.env.PORT || 3000);
