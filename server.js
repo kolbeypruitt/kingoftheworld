@@ -18,8 +18,7 @@ var eurecaServer = new Eureca.Server({allow:['setId', 'spawnEnemy', 'kill', 'upd
 //attach eureca.io to our http server
 eurecaServer.attach(server);
 
-
-
+app.set('port', (process.env.PORT || 3000));
 
 //eureca.io provides events to detect clients connect/disconnect
 
@@ -102,4 +101,12 @@ eurecaServer.exports.handleKeys = function (keys) {
 		//keep last known state so we can send it to new connected clients
 	}
 }
-server.listen(process.env.PORT || 3000);
+// server.listen(process.env.PORT || 3000);
+
+//For avoidong Heroku $PORT error
+app.get('/', function(request, response) {
+    var result = 'App is running'
+    response.send(result);
+}).listen(app.get('port'), function() {
+    console.log('App is running, server is listening on port ', app.get('port'));
+});
