@@ -213,31 +213,18 @@ function preload() {
 	game.load.audio('slash', ['assets/audio/slash.wav']);
 	game.load.audio('levelup', ['assets/audio/levelup.wav']);
 
-	game.load.audio('fire1', ['assets/audio/fire1.wav']);
-	game.load.audio('fire2', ['assets/audio/fire2.wav']);
-	game.load.audio('fire3', ['assets/audio/fire3.wav']);
 	game.load.audio('hit1', ['assets/audio/hit1.wav']);
 	game.load.audio('hit2', ['assets/audio/hit2.wav']);
 	game.load.audio('hit3', ['assets/audio/hit3.wav']);
-	game.load.audio('shipdies', ['assets/audio/shipdies.wav']);
 	game.load.audio('special2', ['assets/audio/special2.wav']);
-	game.load.audio('thrust1', ['assets/audio/thrust1.wav']);
-	game.load.audio('thrust3', ['assets/audio/thrust3.wav']);
 	game.load.audio('win1', ['assets/audio/win1.wav']);
 	game.load.audio('win2', ['assets/audio/win2.wav']);
 	game.load.audio('win3', ['assets/audio/win3.wav']);
 
 	game.load.atlasJSONHash('marvin', 'assets/marvin.png', 'assets/marvin.json');
 	game.load.spritesheet('marvinBtn', 'assets/marvinBtn.png')
-	game.load.spritesheet('ship', 'assets/ships1.png', 60, 45);
-	game.load.spritesheet('ship2', 'assets/ships2.png', 64, 64);
-	game.load.spritesheet('ship3', 'assets/ships3b.png', 134, 110);
 	game.load.image('logo', 'assets/logo.png');
-	game.load.image('bullet1', 'assets/bullet1.png');
-	game.load.image('bullet2', 'assets/bullet2.png');
-	game.load.image('bullet3', 'assets/bullet3.png');
 	game.load.image('grass', 'assets/grass.png');
-	game.load.spritesheet('kaboom', 'assets/explosion.png', 64, 64, 23);
 	// game.load.image('restart','assets/restart.png'); 
 }
 
