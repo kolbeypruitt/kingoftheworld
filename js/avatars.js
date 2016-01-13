@@ -3,9 +3,9 @@
 //	connection handling or variable creation/naming respectively
 //=============================================================================
 var land;
-var ship;
+var avatar;
 var player;
-var shipsList = {};
+var avatarsList = {};
 var explosions;
 var logo;
 var cursors;
@@ -39,10 +39,10 @@ var eurecaClientSetup = function() {
 	}
 
 	eurecaClient.exports.kill = function(id) {
-		if (shipsList[id]) {
-			shipsList[id].kill();
-			delete shipsList[id];
-			if (id === ship.id) {
+		if (avatarsList[id]) {
+			avatarsList[id].kill();
+			delete avatarsList[id];
+			if (id === avatar.id) {
 				var style = {
 					font: "48px Arial",
 					fill: "#f00"
@@ -51,10 +51,10 @@ var eurecaClientSetup = function() {
 				l.fixedToCamera = true;
 			}
 
-			// setTimeout lets the other kill get registered if the last two ships collide
+			// setTimeout lets the other kill get registered if the last two avatars collide
 			setTimeout(function() {
-					if (Object.keys(shipsList).length === 1) {
-						if (shipsList[ship.id].alive) {
+					if (Object.keys(avatarsList).length === 1) {
+						if (avatarsList[avatar.id].alive) {
 							var style = {
 								font: "48px Arial",
 								fill: "#0f0"
@@ -64,18 +64,18 @@ var eurecaClientSetup = function() {
 				      setTimeout(function() {
 				      	w.destroy();
 				      }, 3000)
-							switch (ship.key) {
-								case "ship":
+							switch (avatar.key) {
+								case "avatar":
 									setTimeout(function() {
 										game.add.audio('win1').play()
 									}, 1500)
 									break;
-								case "ship2":
+								case "avatar2":
 									setTimeout(function() {
 										game.add.audio('win2').play()
 									}, 1500)
 									break;
-								case "ship3":
+								case "avatar3":
 									setTimeout(function() {
 										game.add.audio('win3').play('', 0, 1.8)
 									}, 1500)
@@ -83,7 +83,7 @@ var eurecaClientSetup = function() {
 							}
 						}
 					} else {
-						if (shipsList[ship.id].alive) {
+						if (avatarsList[avatar.id].alive) {
 							var style = {
 								font: "48px Arial",
 								fill: "#0f0"
@@ -97,68 +97,68 @@ var eurecaClientSetup = function() {
 					}
 				}, 1)
 				// Adds restart button on death, not used in this version
-				// if(id === ship.id){
+				// if(id === avatar.id){
 				// 	restartButton = game.add.button(200, 200, 'restart', restart, this);
 				// 	restartButton.fixedToCamera = true
 				// }
 		}
 	}
 
-	eurecaClient.exports.spawnEnemy = function(i, x, y, shipType) {
+	eurecaClient.exports.spawnEnemy = function(i, x, y, avatarType) {
 		if (i == myId) return; //this is me
 		console.log('SPAWN');
 
-		if (shipsList[i]) {
-			console.log("Trying to create a ship that already exists.")
+		if (avatarsList[i]) {
+			console.log("Trying to create a avatar that already exists.")
 		} else {
 			var shp;
-			// shipType is a string passed to this function to identify
-			// what type of ship needs to be created
-			switch (shipType) {
-				case "ship1":
-					shp = new Ship1(i, game, ship, x, y);
+			// avatarType is a string passed to this function to identify
+			// what type of avatar needs to be created
+			switch (avatarType) {
+				case "avatar1":
+					shp = new Avatar1(i, game, avatar, x, y);
 					break;
-				case "ship2":
-					shp = new Ship2(i, game, ship, x, y);
+				case "avatar2":
+					shp = new Avatar2(i, game, avatar, x, y);
 					break;
-				case "ship3":
-					shp = new Ship3(i, game, ship, x, y);
+				case "avatar3":
+					shp = new Avatar3(i, game, avatar, x, y);
 					break;
 			}
-			shipsList[i] = shp;
+			avatarsList[i] = shp;
 			newLogin = true
 		}
 	}
 
 	eurecaClient.exports.updateState = function(id, state) {
-		if (shipsList[id]) {
-			shipsList[id].ship.bringToTop();
-			shipsList[id].cursor = state;
-			shipsList[id].ship.x = state.x;
-			shipsList[id].ship.y = state.y;
-			shipsList[id].ship.angle = state.angle;
-			shipsList[id].alive = state.alive;
-			shipsList[id].shipType = state.shipType;
-			shipsList[id].update(state.shipType);
+		if (avatarsList[id]) {
+			avatarsList[id].avatar.bringToTop();
+			avatarsList[id].cursor = state;
+			avatarsList[id].avatar.x = state.x;
+			avatarsList[id].avatar.y = state.y;
+			avatarsList[id].avatar.angle = state.angle;
+			avatarsList[id].alive = state.alive;
+			avatarsList[id].avatarType = state.avatarType;
+			avatarsList[id].update(state.avatarType);
 		} else {
 			// This code not needed
 			// var shp;
-			// switch(state.shipType){
-			// 	case "ship1":
-			// 		shp = new Ship1(id, game, ship, state.x, state.y);
+			// switch(state.avatarType){
+			// 	case "avatar1":
+			// 		shp = new Avatar1(id, game, avatar, state.x, state.y);
 			// 		break;
-			// 	case "ship2":
-			// 		shp = new Ship2(id, game, ship, state.x, state.y);
+			// 	case "avatar2":
+			// 		shp = new Avatar2(id, game, avatar, state.x, state.y);
 			// 		break;
 			// }
-			// shipsList[id] = shp;
+			// avatarsList[id] = shp;
 			// newLogin = true
 		}
 	}
 }
 
 
-Ship = function(index, game, player, x, y) {
+Avatar = function(index, game, player, x, y) {
 
 	this.cursor = {
 		left: false,
@@ -179,7 +179,7 @@ Ship = function(index, game, player, x, y) {
 	this.game = game;
 	this.health;
 	this.player = player;
-	this.shipType = ''
+	this.avatarType = ''
 
 
 	this.currentSpeed = 0;
@@ -193,9 +193,9 @@ Ship = function(index, game, player, x, y) {
 
 };
 
-Ship.prototype.kill = function() {
+Avatar.prototype.kill = function() {
 	this.alive = false;
-	this.ship.kill();
+	this.avatar.kill();
 }
 
 
@@ -204,43 +204,43 @@ Ship.prototype.kill = function() {
 
 
 
-function Ship1(myId, game, ship, x, y) {
-  Ship.call(this, myId, game, ship)
+function Avatar1(myId, game, avatar, x, y) {
+  Avatar.call(this, myId, game, avatar)
   this.health = 30;
   this.fireRate = 500;
   this.damage = 5;
-  this.shipType = 'ship1'
-    // this.ship = game.add.sprite(x, y, 'ship');
-  this.ship = game.add.sprite(x, y, 'marvin', 78);
-  this.ship.animations.add('engines', [1, 2], 20, true);
-  this.ship.animations.add('off', [0], 20, true);
+  this.avatarType = 'avatar1'
+    // this.avatar = game.add.sprite(x, y, 'avatar');
+  this.avatar = game.add.sprite(x, y, 'marvin', 78);
+  this.avatar.animations.add('engines', [1, 2], 20, true);
+  this.avatar.animations.add('off', [0], 20, true);
 
 
-  this.ship.animations.add('walk_up', [60, 61, 62, 63, 64, 65, 66, 67, 68], 60, false, true);
-  this.ship.animations.add('walk_left', [69, 70, 71, 72, 73, 74, 75, 76, 77], 60, false, true);
-  this.ship.animations.add('walk_down', [78, 79, 80, 81, 82, 83, 84, 85, 86], 60, false, true);
-  this.ship.animations.add('walk_right', [87, 88, 89, 90, 91, 92, 93, 94, 95], 60, false, true);
+  this.avatar.animations.add('walk_up', [60, 61, 62, 63, 64, 65, 66, 67, 68], 60, false, true);
+  this.avatar.animations.add('walk_left', [69, 70, 71, 72, 73, 74, 75, 76, 77], 60, false, true);
+  this.avatar.animations.add('walk_down', [78, 79, 80, 81, 82, 83, 84, 85, 86], 60, false, true);
+  this.avatar.animations.add('walk_right', [87, 88, 89, 90, 91, 92, 93, 94, 95], 60, false, true);
 
-  this.ship.animations.add('attack_up', [178, 179, 180, 181, 182, 183], 60, false, true);
-  this.ship.animations.add('attack_left', [184, 185, 186, 187, 188, 189], 60, false, true);
-  this.ship.animations.add('attack_down', [190, 191, 192, 193, 194, 195], 60, false, true);
-  this.ship.animations.add('attack_right', [196, 197, 198, 199, 200, 201], 60, false, true);
+  this.avatar.animations.add('attack_up', [178, 179, 180, 181, 182, 183], 60, false, true);
+  this.avatar.animations.add('attack_left', [184, 185, 186, 187, 188, 189], 60, false, true);
+  this.avatar.animations.add('attack_down', [190, 191, 192, 193, 194, 195], 60, false, true);
+  this.avatar.animations.add('attack_right', [196, 197, 198, 199, 200, 201], 60, false, true);
 
-  this.ship.animations.add('die', [172, 173, 174, 175, 176, 177], 60, false, true);
+  this.avatar.animations.add('die', [172, 173, 174, 175, 176, 177], 60, false, true);
 
-  this.ship.anchor.set(0.5);
-  this.ship.id = myId;
-  game.physics.enable(this.ship, Phaser.Physics.ARCADE);
-  this.ship.body.immovable = false;
-  this.ship.body.drag.setTo(40);
-  this.ship.body.maxVelocity.setTo(330);
-  this.ship.body.bounce.setTo(0, 0);
+  this.avatar.anchor.set(0.5);
+  this.avatar.id = myId;
+  game.physics.enable(this.avatar, Phaser.Physics.ARCADE);
+  this.avatar.body.immovable = false;
+  this.avatar.body.drag.setTo(40);
+  this.avatar.body.maxVelocity.setTo(330);
+  this.avatar.body.bounce.setTo(0, 0);
   // setSize does not work with rotation
-  // this.ship.body.setSize(40, 15, 20, 15);
-  this.ship.body.collideWorldBounds = true;
-  this.ship.body.checkCollision.up = false;
-  this.ship.body.checkCollision.down = false;
-  this.ship.body.bounce.setTo(1, 1);
+  // this.avatar.body.setSize(40, 15, 20, 15);
+  this.avatar.body.collideWorldBounds = true;
+  this.avatar.body.checkCollision.up = false;
+  this.avatar.body.checkCollision.down = false;
+  this.avatar.body.bounce.setTo(1, 1);
 
 
   // this.bullets = game.add.group();
@@ -252,11 +252,11 @@ function Ship1(myId, game, ship, x, y) {
   // this.bullets.setAll('outOfBoundsKill', true);
   // this.bullets.setAll('checkWorldBounds', true);
   // Allow powerslide
-  game.physics.arcade.velocityFromRotation(this.ship.rotation, 0, this.ship.body.velocity);
+  game.physics.arcade.velocityFromRotation(this.avatar.rotation, 0, this.avatar.body.velocity);
 }
-Ship1.prototype = Object.create(Ship.prototype);
-Ship1.prototype.constructor = Ship1;
-Ship1.prototype.update = function(shipType) {
+Avatar1.prototype = Object.create(Avatar.prototype);
+Avatar1.prototype.constructor = Avatar1;
+Avatar1.prototype.update = function(avatarType) {
 
   var inputChanged = (
     this.cursor.left != this.input.left ||
@@ -270,42 +270,42 @@ Ship1.prototype.update = function(shipType) {
   if (inputChanged || newLogin === true) {
     //Handle input change here
     //send new values to the server   
-    if (this.ship.id == myId) {
+    if (this.avatar.id == myId) {
       // send latest valid state to the server
-      this.input.x = this.ship.x;
-      this.input.y = this.ship.y;
-      this.input.angle = this.ship.angle;
-      this.input.alive = this.ship.alive;
-      this.input.shipType = this.shipType;
+      this.input.x = this.avatar.x;
+      this.input.y = this.avatar.y;
+      this.input.angle = this.avatar.angle;
+      this.input.alive = this.avatar.alive;
+      this.input.avatarType = this.avatarType;
 
       eurecaServer.handleKeys(this.input);
       newLogin = false
     }
   }
 
-  this.ship.body.velocity.x = 0;
-  this.ship.body.velocity.y = 0;
+  this.avatar.body.velocity.x = 0;
+  this.avatar.body.velocity.y = 0;
 
   if (this.cursor.left) {
-    this.ship.body.velocity.x = -200;
+    this.avatar.body.velocity.x = -200;
     this.currentDir = "left"
-    this.ship.animations.play('walk_left', 8, false, false)
+    this.avatar.animations.play('walk_left', 8, false, false)
   }
 
   if (this.cursor.right) {
-    this.ship.body.velocity.x = 200;
+    this.avatar.body.velocity.x = 200;
     this.currentDir = "right"
-    this.ship.animations.play('walk_right', 8, false, false);
+    this.avatar.animations.play('walk_right', 8, false, false);
   }
   if (this.cursor.up) {
-    this.ship.body.velocity.y = -200;
+    this.avatar.body.velocity.y = -200;
     this.currentDir = "up"
-    this.ship.animations.play('walk_up', 8, false, false);
+    this.avatar.animations.play('walk_up', 8, false, false);
   }
   if (this.cursor.down) {
-    this.ship.body.velocity.y = 200;
+    this.avatar.body.velocity.y = 200;
     this.currentDir = "down"
-    this.ship.animations.play('walk_down', 8, false, false);
+    this.avatar.animations.play('walk_down', 8, false, false);
   }
   
   var isRunning = (this.cursor.left || this.cursor.right || this.cursor.up || this.cursor.down || this.cursor.atack);
@@ -315,30 +315,30 @@ Ship1.prototype.update = function(shipType) {
     if (this.cursor.attack) {
 
     } else if (!isAttacking){
-      this.ship.animations.stop();
+      this.avatar.animations.stop();
     }
   }
 
   if (this.cursor.attack && this.currentDir === "left") {
     isAttacking = true;
     // if (isInRange)
-    this.ship.animations.play('attack_left', 8, false, false).onComplete.add(function () {
+    this.avatar.animations.play('attack_left', 8, false, false).onComplete.add(function () {
       isAttacking = false;
     }, this);
-    // this.attack(this.ship, enemy)
+    // this.attack(this.avatar, enemy)
   } else
   if (this.cursor.attack && this.currentDir === "right") {
-    this.ship.animations.play('attack_right', 8, false, false).onComplete.add(function () {
+    this.avatar.animations.play('attack_right', 8, false, false).onComplete.add(function () {
       isAttacking = false;
     }, this);
   } else
   if (this.cursor.attack && this.currentDir === "up") {
-    this.ship.animations.play('attack_up', 8, false, false).onComplete.add(function () {
+    this.avatar.animations.play('attack_up', 8, false, false).onComplete.add(function () {
       isAttacking = false;
     }, this);
   } else
   if (this.cursor.attack && this.currentDir === "down") {
-    this.ship.animations.play('attack_down', 8, false, false).onComplete.add(function () {
+    this.avatar.animations.play('attack_down', 8, false, false).onComplete.add(function () {
       isAttacking = false;
     }, this);
   }
@@ -353,74 +353,52 @@ Ship1.prototype.update = function(shipType) {
   land.tilePosition.x = -game.camera.x * .8;
   land.tilePosition.y = -game.camera.y * .8;
 
-  if (this.cursor.up) slideDirection = this.ship.rotation
+  if (this.cursor.up) slideDirection = this.avatar.rotation
 
   if (this.currentSpeed > 0) {
-    game.physics.arcade.velocityFromRotation(slideDirection, this.currentSpeed, this.ship.body.velocity);
+    game.physics.arcade.velocityFromRotation(slideDirection, this.currentSpeed, this.avatar.body.velocity);
   }
 
-  game.world.wrap(this.ship)
+  game.world.wrap(this.avatar)
 };
-Ship1.prototype.fire = function(target) {
-  if (!this.alive) return;
-  // This function takes bullets from the extinct bullet pool and allows fire if delay is up
-  if (this.game.time.now > this.nextFire && this.bullets.countDead() > 0) {
-    // game.add.audio('fire1').play()
-    this.nextFire = this.game.time.now + this.fireRate;
-    var bullet = this.bullets.getFirstDead();
-    bullet.bringToTop()
 
-    // Using sin and cos to add offset in direction ship is facing
-    bullet.reset(this.ship.x + Math.cos(this.ship.rotation) * 30, this.ship.y + Math.sin(this.ship.rotation) * 30);
-
-    // Rotate the sprite
-    bullet.rotation = this.ship.rotation;
-    // Set the bullet speed and direction
-    game.physics.arcade.velocityFromRotation(this.ship.rotation, 800, bullet.body.velocity);
-    // Destroy the bullet after a certain time to limit range 
-    setTimeout(function() {
-      bullet.kill()
-    }, 600)
-  }
-}
-
-function Ship2(myId, game, ship, x, y) {
-  Ship.call(this, myId, game, ship)
+function Avatar2(myId, game, avatar, x, y) {
+  Avatar.call(this, myId, game, avatar)
   this.health = 30;
   this.fireRate = 500;
   this.damage = 5;
-  this.shipType = 'ship2'
-    // this.ship = game.add.sprite(x, y, 'ship');
-  this.ship = game.add.sprite(x, y, 'marvin', 78);
-  this.ship.animations.add('engines', [1, 2], 20, true);
-  this.ship.animations.add('off', [0], 20, true);
+  this.avatarType = 'avatar2'
+    // this.avatar = game.add.sprite(x, y, 'avatar');
+  this.avatar = game.add.sprite(x, y, 'marvin', 78);
+  this.avatar.animations.add('engines', [1, 2], 20, true);
+  this.avatar.animations.add('off', [0], 20, true);
 
 
-  this.ship.animations.add('walk_up', [60, 61, 62, 63, 64, 65, 66, 67, 68], 60, false, true);
-  this.ship.animations.add('walk_left', [69, 70, 71, 72, 73, 74, 75, 76, 77], 60, false, true);
-  this.ship.animations.add('walk_down', [78, 79, 80, 81, 82, 83, 84, 85, 86], 60, false, true);
-  this.ship.animations.add('walk_right', [87, 88, 89, 90, 91, 92, 93, 94, 95], 60, false, true);
+  this.avatar.animations.add('walk_up', [60, 61, 62, 63, 64, 65, 66, 67, 68], 60, false, true);
+  this.avatar.animations.add('walk_left', [69, 70, 71, 72, 73, 74, 75, 76, 77], 60, false, true);
+  this.avatar.animations.add('walk_down', [78, 79, 80, 81, 82, 83, 84, 85, 86], 60, false, true);
+  this.avatar.animations.add('walk_right', [87, 88, 89, 90, 91, 92, 93, 94, 95], 60, false, true);
 
-  this.ship.animations.add('attack_up', [178, 179, 180, 181, 182, 183], 60, false, true);
-  this.ship.animations.add('attack_left', [184, 185, 186, 187, 188, 189], 60, false, true);
-  this.ship.animations.add('attack_down', [190, 191, 192, 193, 194, 195], 60, false, true);
-  this.ship.animations.add('attack_right', [196, 197, 198, 199, 200, 201], 60, false, true);
+  this.avatar.animations.add('attack_up', [178, 179, 180, 181, 182, 183], 60, false, true);
+  this.avatar.animations.add('attack_left', [184, 185, 186, 187, 188, 189], 60, false, true);
+  this.avatar.animations.add('attack_down', [190, 191, 192, 193, 194, 195], 60, false, true);
+  this.avatar.animations.add('attack_right', [196, 197, 198, 199, 200, 201], 60, false, true);
 
-  this.ship.animations.add('die', [172, 173, 174, 175, 176, 177], 60, false, true);
+  this.avatar.animations.add('die', [172, 173, 174, 175, 176, 177], 60, false, true);
 
-  this.ship.anchor.set(0.5);
-  this.ship.id = myId;
-  game.physics.enable(this.ship, Phaser.Physics.ARCADE);
-  this.ship.body.immovable = false;
-  this.ship.body.drag.setTo(40);
-  this.ship.body.maxVelocity.setTo(330);
-  this.ship.body.bounce.setTo(0, 0);
+  this.avatar.anchor.set(0.5);
+  this.avatar.id = myId;
+  game.physics.enable(this.avatar, Phaser.Physics.ARCADE);
+  this.avatar.body.immovable = false;
+  this.avatar.body.drag.setTo(40);
+  this.avatar.body.maxVelocity.setTo(330);
+  this.avatar.body.bounce.setTo(0, 0);
   // setSize does not work with rotation
-  // this.ship.body.setSize(40, 15, 20, 15);
-  this.ship.body.collideWorldBounds = true;
-  this.ship.body.checkCollision.up = false;
-  this.ship.body.checkCollision.down = false;
-  this.ship.body.bounce.setTo(1, 1);
+  // this.avatar.body.setSize(40, 15, 20, 15);
+  this.avatar.body.collideWorldBounds = true;
+  this.avatar.body.checkCollision.up = false;
+  this.avatar.body.checkCollision.down = false;
+  this.avatar.body.bounce.setTo(1, 1);
 
 
   // this.bullets = game.add.group();
@@ -432,11 +410,11 @@ function Ship2(myId, game, ship, x, y) {
   // this.bullets.setAll('outOfBoundsKill', true);
   // this.bullets.setAll('checkWorldBounds', true);
   // Allow powerslide
-  game.physics.arcade.velocityFromRotation(this.ship.rotation, 0, this.ship.body.velocity);
+  game.physics.arcade.velocityFromRotation(this.avatar.rotation, 0, this.avatar.body.velocity);
 }
-Ship2.prototype = Object.create(Ship.prototype);
-Ship2.prototype.constructor = Ship2;
-Ship2.prototype.update = function(shipType) {
+Avatar2.prototype = Object.create(Avatar.prototype);
+Avatar2.prototype.constructor = Avatar2;
+Avatar2.prototype.update = function(avatarType) {
 
   var inputChanged = (
     this.cursor.left != this.input.left ||
@@ -450,42 +428,42 @@ Ship2.prototype.update = function(shipType) {
   if (inputChanged || newLogin === true) {
     //Handle input change here
     //send new values to the server   
-    if (this.ship.id == myId) {
+    if (this.avatar.id == myId) {
       // send latest valid state to the server
-      this.input.x = this.ship.x;
-      this.input.y = this.ship.y;
-      this.input.angle = this.ship.angle;
-      this.input.alive = this.ship.alive;
-      this.input.shipType = this.shipType;
+      this.input.x = this.avatar.x;
+      this.input.y = this.avatar.y;
+      this.input.angle = this.avatar.angle;
+      this.input.alive = this.avatar.alive;
+      this.input.avatarType = this.avatarType;
 
       eurecaServer.handleKeys(this.input);
       newLogin = false
     }
   }
 
-  this.ship.body.velocity.x = 0;
-  this.ship.body.velocity.y = 0;
+  this.avatar.body.velocity.x = 0;
+  this.avatar.body.velocity.y = 0;
 
   if (this.cursor.left) {
-    this.ship.body.velocity.x = -200;
+    this.avatar.body.velocity.x = -200;
     this.currentDir = "left"
-    this.ship.animations.play('walk_left', 8, false, false)
+    this.avatar.animations.play('walk_left', 8, false, false)
   }
 
   if (this.cursor.right) {
-    this.ship.body.velocity.x = 200;
+    this.avatar.body.velocity.x = 200;
     this.currentDir = "right"
-    this.ship.animations.play('walk_right', 8, false, false);
+    this.avatar.animations.play('walk_right', 8, false, false);
   }
   if (this.cursor.up) {
-    this.ship.body.velocity.y = -200;
+    this.avatar.body.velocity.y = -200;
     this.currentDir = "up"
-    this.ship.animations.play('walk_up', 8, false, false);
+    this.avatar.animations.play('walk_up', 8, false, false);
   }
   if (this.cursor.down) {
-    this.ship.body.velocity.y = 200;
+    this.avatar.body.velocity.y = 200;
     this.currentDir = "down"
-    this.ship.animations.play('walk_down', 8, false, false);
+    this.avatar.animations.play('walk_down', 8, false, false);
   }
   
   var isRunning = (this.cursor.left || this.cursor.right || this.cursor.up || this.cursor.down || this.cursor.atack);
@@ -495,30 +473,30 @@ Ship2.prototype.update = function(shipType) {
     if (this.cursor.attack) {
 
     } else if (!isAttacking){
-      this.ship.animations.stop();
+      this.avatar.animations.stop();
     }
   }
 
   if (this.cursor.attack && this.currentDir === "left") {
     isAttacking = true;
     // if (isInRange)
-    this.ship.animations.play('attack_left', 8, false, false).onComplete.add(function () {
+    this.avatar.animations.play('attack_left', 8, false, false).onComplete.add(function () {
       isAttacking = false;
     }, this);
-    // this.attack(this.ship, enemy)
+    // this.attack(this.avatar, enemy)
   } else
   if (this.cursor.attack && this.currentDir === "right") {
-    this.ship.animations.play('attack_right', 8, false, false).onComplete.add(function () {
+    this.avatar.animations.play('attack_right', 8, false, false).onComplete.add(function () {
       isAttacking = false;
     }, this);
   } else
   if (this.cursor.attack && this.currentDir === "up") {
-    this.ship.animations.play('attack_up', 8, false, false).onComplete.add(function () {
+    this.avatar.animations.play('attack_up', 8, false, false).onComplete.add(function () {
       isAttacking = false;
     }, this);
   } else
   if (this.cursor.attack && this.currentDir === "down") {
-    this.ship.animations.play('attack_down', 8, false, false).onComplete.add(function () {
+    this.avatar.animations.play('attack_down', 8, false, false).onComplete.add(function () {
       isAttacking = false;
     }, this);
   }
@@ -533,74 +511,53 @@ Ship2.prototype.update = function(shipType) {
   land.tilePosition.x = -game.camera.x * .8;
   land.tilePosition.y = -game.camera.y * .8;
 
-  if (this.cursor.up) slideDirection = this.ship.rotation
+  if (this.cursor.up) slideDirection = this.avatar.rotation
 
   if (this.currentSpeed > 0) {
-    game.physics.arcade.velocityFromRotation(slideDirection, this.currentSpeed, this.ship.body.velocity);
+    game.physics.arcade.velocityFromRotation(slideDirection, this.currentSpeed, this.avatar.body.velocity);
   }
 
-  game.world.wrap(this.ship)
+  game.world.wrap(this.avatar)
 };
-Ship2.prototype.fire = function(target) {
-  if (!this.alive) return;
-  // This function takes bullets from the extinct bullet pool and allows fire if delay is up
-  if (this.game.time.now > this.nextFire && this.bullets.countDead() > 0) {
-    // game.add.audio('fire1').play()
-    this.nextFire = this.game.time.now + this.fireRate;
-    var bullet = this.bullets.getFirstDead();
-    bullet.bringToTop()
 
-    // Using sin and cos to add offset in direction ship is facing
-    bullet.reset(this.ship.x + Math.cos(this.ship.rotation) * 30, this.ship.y + Math.sin(this.ship.rotation) * 30);
 
-    // Rotate the sprite
-    bullet.rotation = this.ship.rotation;
-    // Set the bullet speed and direction
-    game.physics.arcade.velocityFromRotation(this.ship.rotation, 800, bullet.body.velocity);
-    // Destroy the bullet after a certain time to limit range 
-    setTimeout(function() {
-      bullet.kill()
-    }, 600)
-  }
-}
-
-function Ship3(myId, game, ship, x, y) {
-  Ship.call(this, myId, game, ship)
+function Avatar3(myId, game, avatar, x, y) {
+  Avatar.call(this, myId, game, avatar)
   this.health = 30;
   this.fireRate = 500;
   this.damage = 5;
-  this.shipType = 'ship3'
-    // this.ship = game.add.sprite(x, y, 'ship');
-  this.ship = game.add.sprite(x, y, 'marvin', 78);
-  this.ship.animations.add('engines', [1, 2], 20, true);
-  this.ship.animations.add('off', [0], 20, true);
+  this.avatarType = 'avatar3'
+    // this.avatar = game.add.sprite(x, y, 'avatar');
+  this.avatar = game.add.sprite(x, y, 'marvin', 78);
+  this.avatar.animations.add('engines', [1, 2], 20, true);
+  this.avatar.animations.add('off', [0], 20, true);
 
 
-  this.ship.animations.add('walk_up', [60, 61, 62, 63, 64, 65, 66, 67, 68], 60, false, true);
-  this.ship.animations.add('walk_left', [69, 70, 71, 72, 73, 74, 75, 76, 77], 60, false, true);
-  this.ship.animations.add('walk_down', [78, 79, 80, 81, 82, 83, 84, 85, 86], 60, false, true);
-  this.ship.animations.add('walk_right', [87, 88, 89, 90, 91, 92, 93, 94, 95], 60, false, true);
+  this.avatar.animations.add('walk_up', [60, 61, 62, 63, 64, 65, 66, 67, 68], 60, false, true);
+  this.avatar.animations.add('walk_left', [69, 70, 71, 72, 73, 74, 75, 76, 77], 60, false, true);
+  this.avatar.animations.add('walk_down', [78, 79, 80, 81, 82, 83, 84, 85, 86], 60, false, true);
+  this.avatar.animations.add('walk_right', [87, 88, 89, 90, 91, 92, 93, 94, 95], 60, false, true);
 
-  this.ship.animations.add('attack_up', [178, 179, 180, 181, 182, 183], 60, false, true);
-  this.ship.animations.add('attack_left', [184, 185, 186, 187, 188, 189], 60, false, true);
-  this.ship.animations.add('attack_down', [190, 191, 192, 193, 194, 195], 60, false, true);
-  this.ship.animations.add('attack_right', [196, 197, 198, 199, 200, 201], 60, false, true);
+  this.avatar.animations.add('attack_up', [178, 179, 180, 181, 182, 183], 60, false, true);
+  this.avatar.animations.add('attack_left', [184, 185, 186, 187, 188, 189], 60, false, true);
+  this.avatar.animations.add('attack_down', [190, 191, 192, 193, 194, 195], 60, false, true);
+  this.avatar.animations.add('attack_right', [196, 197, 198, 199, 200, 201], 60, false, true);
 
-  this.ship.animations.add('die', [172, 173, 174, 175, 176, 177], 60, false, true);
+  this.avatar.animations.add('die', [172, 173, 174, 175, 176, 177], 60, false, true);
 
-  this.ship.anchor.set(0.5);
-  this.ship.id = myId;
-  game.physics.enable(this.ship, Phaser.Physics.ARCADE);
-  this.ship.body.immovable = false;
-  this.ship.body.drag.setTo(40);
-  this.ship.body.maxVelocity.setTo(330);
-  this.ship.body.bounce.setTo(0, 0);
+  this.avatar.anchor.set(0.5);
+  this.avatar.id = myId;
+  game.physics.enable(this.avatar, Phaser.Physics.ARCADE);
+  this.avatar.body.immovable = false;
+  this.avatar.body.drag.setTo(40);
+  this.avatar.body.maxVelocity.setTo(330);
+  this.avatar.body.bounce.setTo(0, 0);
   // setSize does not work with rotation
-  // this.ship.body.setSize(40, 15, 20, 15);
-  this.ship.body.collideWorldBounds = true;
-  this.ship.body.checkCollision.up = false;
-  this.ship.body.checkCollision.down = false;
-  this.ship.body.bounce.setTo(1, 1);
+  // this.avatar.body.setSize(40, 15, 20, 15);
+  this.avatar.body.collideWorldBounds = true;
+  this.avatar.body.checkCollision.up = false;
+  this.avatar.body.checkCollision.down = false;
+  this.avatar.body.bounce.setTo(1, 1);
 
 
   // this.bullets = game.add.group();
@@ -612,11 +569,11 @@ function Ship3(myId, game, ship, x, y) {
   // this.bullets.setAll('outOfBoundsKill', true);
   // this.bullets.setAll('checkWorldBounds', true);
   // Allow powerslide
-  game.physics.arcade.velocityFromRotation(this.ship.rotation, 0, this.ship.body.velocity);
+  game.physics.arcade.velocityFromRotation(this.avatar.rotation, 0, this.avatar.body.velocity);
 }
-Ship3.prototype = Object.create(Ship.prototype);
-Ship3.prototype.constructor = Ship3;
-Ship3.prototype.update = function(shipType) {
+Avatar3.prototype = Object.create(Avatar.prototype);
+Avatar3.prototype.constructor = Avatar3;
+Avatar3.prototype.update = function(avatarType) {
 
   var inputChanged = (
     this.cursor.left != this.input.left ||
@@ -630,42 +587,42 @@ Ship3.prototype.update = function(shipType) {
   if (inputChanged || newLogin === true) {
     //Handle input change here
     //send new values to the server   
-    if (this.ship.id == myId) {
+    if (this.avatar.id == myId) {
       // send latest valid state to the server
-      this.input.x = this.ship.x;
-      this.input.y = this.ship.y;
-      this.input.angle = this.ship.angle;
-      this.input.alive = this.ship.alive;
-      this.input.shipType = this.shipType;
+      this.input.x = this.avatar.x;
+      this.input.y = this.avatar.y;
+      this.input.angle = this.avatar.angle;
+      this.input.alive = this.avatar.alive;
+      this.input.avatarType = this.avatarType;
 
       eurecaServer.handleKeys(this.input);
       newLogin = false
     }
   }
 
-  this.ship.body.velocity.x = 0;
-  this.ship.body.velocity.y = 0;
+  this.avatar.body.velocity.x = 0;
+  this.avatar.body.velocity.y = 0;
 
   if (this.cursor.left) {
-    this.ship.body.velocity.x = -200;
+    this.avatar.body.velocity.x = -200;
     this.currentDir = "left"
-    this.ship.animations.play('walk_left', 8, false, false)
+    this.avatar.animations.play('walk_left', 8, false, false)
   }
 
   if (this.cursor.right) {
-    this.ship.body.velocity.x = 200;
+    this.avatar.body.velocity.x = 200;
     this.currentDir = "right"
-    this.ship.animations.play('walk_right', 8, false, false);
+    this.avatar.animations.play('walk_right', 8, false, false);
   }
   if (this.cursor.up) {
-    this.ship.body.velocity.y = -200;
+    this.avatar.body.velocity.y = -200;
     this.currentDir = "up"
-    this.ship.animations.play('walk_up', 8, false, false);
+    this.avatar.animations.play('walk_up', 8, false, false);
   }
   if (this.cursor.down) {
-    this.ship.body.velocity.y = 200;
+    this.avatar.body.velocity.y = 200;
     this.currentDir = "down"
-    this.ship.animations.play('walk_down', 8, false, false);
+    this.avatar.animations.play('walk_down', 8, false, false);
   }
   
   var isRunning = (this.cursor.left || this.cursor.right || this.cursor.up || this.cursor.down || this.cursor.atack);
@@ -675,30 +632,30 @@ Ship3.prototype.update = function(shipType) {
     if (this.cursor.attack) {
 
     } else if (!isAttacking){
-      this.ship.animations.stop();
+      this.avatar.animations.stop();
     }
   }
 
   if (this.cursor.attack && this.currentDir === "left") {
     isAttacking = true;
     // if (isInRange)
-    this.ship.animations.play('attack_left', 8, false, false).onComplete.add(function () {
+    this.avatar.animations.play('attack_left', 8, false, false).onComplete.add(function () {
       isAttacking = false;
     }, this);
-    // this.attack(this.ship, enemy)
+    // this.attack(this.avatar, enemy)
   } else
   if (this.cursor.attack && this.currentDir === "right") {
-    this.ship.animations.play('attack_right', 8, false, false).onComplete.add(function () {
+    this.avatar.animations.play('attack_right', 8, false, false).onComplete.add(function () {
       isAttacking = false;
     }, this);
   } else
   if (this.cursor.attack && this.currentDir === "up") {
-    this.ship.animations.play('attack_up', 8, false, false).onComplete.add(function () {
+    this.avatar.animations.play('attack_up', 8, false, false).onComplete.add(function () {
       isAttacking = false;
     }, this);
   } else
   if (this.cursor.attack && this.currentDir === "down") {
-    this.ship.animations.play('attack_down', 8, false, false).onComplete.add(function () {
+    this.avatar.animations.play('attack_down', 8, false, false).onComplete.add(function () {
       isAttacking = false;
     }, this);
   }
@@ -713,36 +670,15 @@ Ship3.prototype.update = function(shipType) {
   land.tilePosition.x = -game.camera.x * .8;
   land.tilePosition.y = -game.camera.y * .8;
 
-  if (this.cursor.up) slideDirection = this.ship.rotation
+  if (this.cursor.up) slideDirection = this.avatar.rotation
 
   if (this.currentSpeed > 0) {
-    game.physics.arcade.velocityFromRotation(slideDirection, this.currentSpeed, this.ship.body.velocity);
+    game.physics.arcade.velocityFromRotation(slideDirection, this.currentSpeed, this.avatar.body.velocity);
   }
 
-  game.world.wrap(this.ship)
+  game.world.wrap(this.avatar)
 };
-Ship3.prototype.fire = function(target) {
-  if (!this.alive) return;
-  // This function takes bullets from the extinct bullet pool and allows fire if delay is up
-  if (this.game.time.now > this.nextFire && this.bullets.countDead() > 0) {
-    // game.add.audio('fire1').play()
-    this.nextFire = this.game.time.now + this.fireRate;
-    var bullet = this.bullets.getFirstDead();
-    bullet.bringToTop()
 
-    // Using sin and cos to add offset in direction ship is facing
-    bullet.reset(this.ship.x + Math.cos(this.ship.rotation) * 30, this.ship.y + Math.sin(this.ship.rotation) * 30);
-
-    // Rotate the sprite
-    bullet.rotation = this.ship.rotation;
-    // Set the bullet speed and direction
-    game.physics.arcade.velocityFromRotation(this.ship.rotation, 800, bullet.body.velocity);
-    // Destroy the bullet after a certain time to limit range 
-    setTimeout(function() {
-      bullet.kill()
-    }, 600)
-  }
-}
 
 
 
@@ -786,9 +722,9 @@ function menu() {
 	};
 	var t1 = game.add.text(viewportWidth / 4 - 150, 300, choose, style);
 
-	var chooseShip1 = game.add.button(viewportWidth / 4 - 150, 400, 'marvinBtn', create.bind(this, Ship1, 'ship1'));
-	// var chooseShip2 = game.add.button(viewportWidth / 4 - 50, 390, 'ship2', create.bind(this, Ship2, 'ship2'));
-	// var chooseShip3 = game.add.button(viewportWidth / 4 + 50, 370, 'ship3', create.bind(this, Ship3, 'ship3'));
+	var chooseAvatar1 = game.add.button(viewportWidth / 4 - 150, 400, 'marvinBtn', create.bind(this, Avatar1, 'avatar1'));
+	// var chooseAvatar2 = game.add.button(viewportWidth / 4 - 50, 390, 'avatar2', create.bind(this, Avatar2, 'avatar2'));
+	// var chooseAvatar3 = game.add.button(viewportWidth / 4 + 50, 370, 'avatar3', create.bind(this, Avatar3, 'avatar3'));
 
 	var instructions = "Arrow keys to move, spacebar to attack";
 	var style2 = {
@@ -801,7 +737,7 @@ function menu() {
 }
 
 
-function create(shipType, shipString) {
+function create(avatarType, avatarString) {
 
 	game.add.audio('goldenaxe').play('', 0, .7);
 
@@ -813,12 +749,12 @@ function create(shipType, shipString) {
 	land = game.add.tileSprite(0, 0, viewportWidth, viewportHeight, 'grass');
 	land.fixedToCamera = true;
 
-	player = new shipType(myId, game, ship);
-	shipsList[myId] = player;
-	ship = player.ship;
-	ship.x = game.world.randomX
-	ship.y = game.world.randomY
-	ship.bringToTop();
+	player = new avatarType(myId, game, avatar);
+	avatarsList[myId] = player;
+	avatar = player.avatar;
+	avatar.x = game.world.randomX
+	avatar.y = game.world.randomY
+	avatar.bringToTop();
 	bullets = player.bullets;
 
 	//	Logo is in menu now
@@ -829,7 +765,7 @@ function create(shipType, shipString) {
 
 
 	game.camera.deadzone = new Phaser.Rectangle(150, 150, 500, 300);
-	game.camera.follow(ship);
+	game.camera.follow(avatar);
 	game.camera.focusOnXY(0, 0);
 
 	cursors = game.input.keyboard.createCursorKeys();
@@ -840,40 +776,40 @@ function create(shipType, shipString) {
 		font: "18px Arial",
 		fill: "#ddd"
 	};
-	ship.h = game.add.text(10, 20, health, style);
-	ship.h.fixedToCamera = true;
+	avatar.h = game.add.text(10, 20, health, style);
+	avatar.h.fixedToCamera = true;
 
 
 	// setTimeout(removeLogo, 2000);
 	var keys = {
-		x: ship.x,
-		y: ship.y,
-		angle: ship.angle,
-		rot: ship.rotation,
-		alive: ship.alive,
-		shipType: player.shipType
+		x: avatar.x,
+		y: avatar.y,
+		angle: avatar.angle,
+		rot: avatar.rotation,
+		alive: avatar.alive,
+		avatarType: player.avatarType
 	}
 	eurecaServer.handleKeys(keys);
-	eurecaServer.handshake(shipString);
+	eurecaServer.handshake(avatarString);
 	ready = true;
 
 	// Remove menu buttons
-	// chooseShip1.kill();
-	// chooseShip2.kill();
-	// chooseShip3.kill();
+	// chooseAvatar1.kill();
+	// chooseAvatar2.kill();
+	// chooseAvatar3.kill();
 }
 
 //	Not using respawn in this version
 //=============================================================================
-// function respawn (shipType) {
+// function respawn (avatarType) {
 // 	land = game.add.tileSprite(0, 0, viewportWidth, viewportHeight, 'space');
 // 	land.fixedToCamera = true;
-// 	shipsList = {};
-// 	player = new shipType(myId, game, ship);
-// 	shipsList[myId] = player;
-// 	ship = player.ship;
-// 	ship.x= game.world.randomX 
-// 	ship.y= game.world.randomY
+// 	avatarsList = {};
+// 	player = new avatarType(myId, game, avatar);
+// 	avatarsList[myId] = player;
+// 	avatar = player.avatar;
+// 	avatar.x= game.world.randomX 
+// 	avatar.y= game.world.randomY
 // 	explosions = game.add.group();
 
 // 	for (var i = 0; i < 10; i++)
@@ -882,16 +818,16 @@ function create(shipType, shipString) {
 // 		explosionAnimation.anchor.setTo(0.5, 0.5);
 // 		explosionAnimation.animations.add('kaboom');
 // 	}
-// 	ship.bringToTop();
-// 	game.camera.follow(ship);
+// 	avatar.bringToTop();
+// 	game.camera.follow(avatar);
 // 	game.camera.focusOnXY(0, 0);
 // 	var keys = {
-// 		x: ship.x,
-// 		y: ship.y,
-// 		angle: ship.angle,
-// 		rot: ship.rotation,
-// 		alive: ship.alive,
-// 		shipType: player.shipType
+// 		x: avatar.x,
+// 		y: avatar.y,
+// 		angle: avatar.angle,
+// 		rot: avatar.rotation,
+// 		alive: avatar.alive,
+// 		avatarType: player.avatarType
 // 	}
 // 	eurecaServer.handleKeys(keys);
 // }
@@ -913,30 +849,30 @@ function update() {
 	player.input.tx = game.input.x + game.camera.x;
 	player.input.ty = game.input.y + game.camera.y;
 
-	for (var i in shipsList) {
-		if (!shipsList[i]) continue;
-		var curBullets = shipsList[i].bullets;
-		var curShip = shipsList[i].ship;
-		if (shipsList[i].alive) shipsList[i].update();
-		for (var j in shipsList) {
-			if (!shipsList[j]) continue;
+	for (var i in avatarsList) {
+		if (!avatarsList[i]) continue;
+		var curBullets = avatarsList[i].bullets;
+		var curAvatar = avatarsList[i].avatar;
+		if (avatarsList[i].alive) avatarsList[i].update();
+		for (var j in avatarsList) {
+			if (!avatarsList[j]) continue;
 			if (j != i) {
 
-				var targetShip = shipsList[j].ship;
-				// Destroying ships on collision so collision detection not needed in this version
-				// game.physics.arcade.collide(curShip, targetShip);
-				if(game.physics.arcade.distanceBetween(curShip, targetShip) < 100) {
-					if (shipsList[i].input.attack) {
-						if (!shipsList[i].alive) return;
+				var targetAvatar = avatarsList[j].avatar;
+				// Destroying avatars on collision so collision detection not needed in this version
+				// game.physics.arcade.collide(curAvatar, targetAvatar);
+				if(game.physics.arcade.distanceBetween(curAvatar, targetAvatar) < 100) {
+					if (avatarsList[i].input.attack) {
+						if (!avatarsList[i].alive) return;
 
-						if (this.game.time.now > shipsList[i].nextFire) {
+						if (this.game.time.now > avatarsList[i].nextFire) {
 						  // game.add.audio('fire1').play()
-						  shipsList[i].nextFire = this.game.time.now + shipsList[i].fireRate;
+						  avatarsList[i].nextFire = this.game.time.now + avatarsList[i].fireRate;
 						  // Destroy the bullet after a certain time to limit range 
-						  shipsList[j].health -= shipsList[i].damage;
-						  console.log('enemy health ', shipsList[j].health);
-						  // shipsList[j].update();
-						  attackKilledPlayer(shipsList[i], shipsList[j]);
+						  avatarsList[j].health -= avatarsList[i].damage;
+						  console.log('enemy health ', avatarsList[j].health);
+						  // avatarsList[j].update();
+						  attackKilledPlayer(avatarsList[i], avatarsList[j]);
 						  setTimeout(function() {
 						  	game.add.audio('slash').play('', 0, 0.7);
 						  }, 400)
@@ -947,99 +883,99 @@ function update() {
 				}
 
 			}
-			if (!shipsList[j].alive) {
-				shipsList[j].update();
+			if (!avatarsList[j].alive) {
+				avatarsList[j].update();
 			}
 		}
 	}
 }
 
-function attackKilledPlayer(curShip, targetShip) {
-	if (targetShip.health <= 0) {
+function attackKilledPlayer(curAvatar, targetAvatar) {
+	if (targetAvatar.health <= 0) {
 		// var explosionAnimation = explosions.getFirstExists(false);
-		// explosionAnimation.reset(targetShip.ship.x, targetShip.ship.y);
+		// explosionAnimation.reset(targetAvatar.avatar.x, targetAvatar.avatar.y);
 		// explosionAnimation.play('kaboom', 30, false, true);
 
-		curShip.ship.scale.setTo(1.5, 1.5);
-		curShip.health += 10;
-		curShip.damage += 5;
-		targetShip.ship.animations.play('die', 8, false, false).onComplete.add(function () {
+		curAvatar.avatar.scale.setTo(1.5, 1.5);
+		curAvatar.health += 10;
+		curAvatar.damage += 5;
+		targetAvatar.avatar.animations.play('die', 8, false, false).onComplete.add(function () {
       setTimeout(function() {
-      	eurecaServer.deletePlayer(targetShip.ship.id)
+      	eurecaServer.deletePlayer(targetAvatar.avatar.id)
       }, 40)
       game.add.audio('die').play('', 0, 4);
     }, this);
 	}
 }
 
-// function bulletHitPlayer(ship, bullet) {
+// function bulletHitPlayer(avatar, bullet) {
 // 	bullet.kill();
 
 // 	switch (bullet.key) {
 // 		case "bullet1":
-// 			shipsList[ship.id].health -= 10
+// 			avatarsList[avatar.id].health -= 10
 // 			game.add.audio('hit1').play('', 0, .3)
-// 			if (ship.h) {
-// 				ship.h.destroy()
+// 			if (avatar.h) {
+// 				avatar.h.destroy()
 // 				var health = "Health: " + player.health;
 // 				var style = {
 // 					font: "16px Arial",
 // 					fill: "#ddd"
 // 				};
-// 				ship.h = game.add.text(10, 20, health, style);
-// 				ship.h.fixedToCamera = true;
+// 				avatar.h = game.add.text(10, 20, health, style);
+// 				avatar.h.fixedToCamera = true;
 // 			}
 // 			break;
 // 		case "bullet2":
-// 			shipsList[ship.id].health -= 2
+// 			avatarsList[avatar.id].health -= 2
 // 			game.add.audio('hit2').play('', 0, .5)
-// 			if (ship.h) {
-// 				ship.h.destroy()
+// 			if (avatar.h) {
+// 				avatar.h.destroy()
 // 				var health = "Health: " + player.health;
 // 				var style = {
 // 					font: "16px Arial",
 // 					fill: "#ddd"
 // 				};
-// 				ship.h = game.add.text(10, 20, health, style);
-// 				ship.h.fixedToCamera = true;
+// 				avatar.h = game.add.text(10, 20, health, style);
+// 				avatar.h.fixedToCamera = true;
 // 			}
 // 			break;
 // 		case "bullet3":
-// 			shipsList[ship.id].health -= 20
+// 			avatarsList[avatar.id].health -= 20
 // 			game.add.audio('hit3').play()
-// 			if (ship.h) {
-// 				ship.h.destroy()
+// 			if (avatar.h) {
+// 				avatar.h.destroy()
 // 				var health = "Health: " + player.health;
 // 				var style = {
 // 					font: "16px Arial",
 // 					fill: "#ddd"
 // 				};
-// 				ship.h = game.add.text(10, 20, health, style);
-// 				ship.h.fixedToCamera = true;
+// 				avatar.h = game.add.text(10, 20, health, style);
+// 				avatar.h.fixedToCamera = true;
 // 			}
 // 			break;
 // 	}
 
-	// if (shipsList[ship.id].health <= 0) {
+	// if (avatarsList[avatar.id].health <= 0) {
 	// 	var explosionAnimation = explosions.getFirstExists(false);
-	// 	explosionAnimation.reset(ship.x, ship.y);
+	// 	explosionAnimation.reset(avatar.x, avatar.y);
 	// 	explosionAnimation.play('kaboom', 30, false, true);
 	// 	setTimeout(function() {
-	// 		eurecaServer.deletePlayer(ship.id)
+	// 		eurecaServer.deletePlayer(avatar.id)
 	// 	}, 40)
-	// 	game.add.audio('shipdies').play('', 0, .7)
+	// 	game.add.audio('avatardies').play('', 0, .7)
 	// }
 
 // }
 
-// function shipsCollide(ship, curShip) {
+// function avatarsCollide(avatar, curAvatar) {
 // 	setTimeout(function() {
-// 		eurecaServer.deletePlayer(ship.id)
+// 		eurecaServer.deletePlayer(avatar.id)
 // 		var explosionAnimation = explosions.getFirstExists(false);
-// 		explosionAnimation.reset(ship.x, ship.y);
+// 		explosionAnimation.reset(avatar.x, avatar.y);
 // 		explosionAnimation.play('kaboom', 30, false, true);
 // 	}, 40)
-// 	game.add.audio('shipdies').play('', 0, .7)
+// 	game.add.audio('avatardies').play('', 0, .7)
 // }
 
 function restart() {

@@ -80,7 +80,7 @@ eurecaServer.exports.handshake = function()
 
 			if(clients[cc].laststate && clients[cc].laststate.alive){
 				// console.log("clients[cc].laststate:", clients[cc].laststate)
-				remote.spawnEnemy(clients[cc].id, x, y, clients[cc].laststate.shipType);		
+				remote.spawnEnemy(clients[cc].id, x, y, clients[cc].laststate.avatarType);		
 			}
 		}
 	}
