@@ -877,9 +877,9 @@ function update() {
 						  console.log('enemy health ', avatarsList[j].health);
 						  // avatarsList[j].update();
 						  attackKilledPlayer(avatarsList[i], avatarsList[j]);
-						  setTimeout(function() {
-						  	game.add.audio('slash').play('', 0, 0.7);
-						  }, 400)
+						  // setTimeout(function() {
+						  game.add.audio('slash').play('', 0, 0.7);
+						  // }, 400)
 						}
 
 					}
