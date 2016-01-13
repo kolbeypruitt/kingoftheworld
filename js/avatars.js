@@ -369,7 +369,7 @@ function Avatar2(myId, game, avatar, x, y) {
   this.damage = 5;
   this.avatarType = 'avatar2'
     // this.avatar = game.add.sprite(x, y, 'avatar');
-  this.avatar = game.add.sprite(x, y, 'marvin', 78);
+  this.avatar = game.add.sprite(x, y, 'mariah', 78);
   this.avatar.animations.add('engines', [1, 2], 20, true);
   this.avatar.animations.add('off', [0], 20, true);
 
@@ -528,7 +528,7 @@ function Avatar3(myId, game, avatar, x, y) {
   this.damage = 5;
   this.avatarType = 'avatar3'
     // this.avatar = game.add.sprite(x, y, 'avatar');
-  this.avatar = game.add.sprite(x, y, 'marvin', 78);
+  this.avatar = game.add.sprite(x, y, 'martin', 78);
   this.avatar.animations.add('engines', [1, 2], 20, true);
   this.avatar.animations.add('off', [0], 20, true);
 
@@ -706,7 +706,11 @@ function preload() {
 	game.load.audio('win3', ['assets/audio/win3.wav']);
 
 	game.load.atlasJSONHash('marvin', 'assets/marvin.png', 'assets/marvin.json');
-	game.load.spritesheet('marvinBtn', 'assets/marvinBtn.png')
+	game.load.spritesheet('marvinBtn', 'assets/marvinBtn.png');
+	game.load.atlasJSONHash('mariah', 'assets/mariah.png', 'assets/mariah.json');
+	game.load.spritesheet('mariahBtn', 'assets/mariahBtn.png')
+	game.load.atlasJSONHash('martin', 'assets/martin.png', 'assets/martin.json');
+	game.load.spritesheet('martinBtn', 'assets/martinBtn.png')
 	game.load.image('logo', 'assets/logo.png');
 	game.load.image('grass', 'assets/grass.png');
 }
@@ -723,8 +727,8 @@ function menu() {
 	var t1 = game.add.text(viewportWidth / 4 - 150, 300, choose, style);
 
 	var chooseAvatar1 = game.add.button(viewportWidth / 4 - 150, 400, 'marvinBtn', create.bind(this, Avatar1, 'avatar1'));
-	// var chooseAvatar2 = game.add.button(viewportWidth / 4 - 50, 390, 'avatar2', create.bind(this, Avatar2, 'avatar2'));
-	// var chooseAvatar3 = game.add.button(viewportWidth / 4 + 50, 370, 'avatar3', create.bind(this, Avatar3, 'avatar3'));
+	var chooseAvatar2 = game.add.button(viewportWidth / 4 - 50, 400, 'mariahBtn', create.bind(this, Avatar2, 'avatar2'));
+	var chooseAvatar3 = game.add.button(viewportWidth / 4 + 100, 400, 'martinBtn', create.bind(this, Avatar3, 'avatar3'));
 
 	var instructions = "Arrow keys to move, spacebar to attack";
 	var style2 = {
@@ -732,7 +736,7 @@ function menu() {
 		fill: "#ddd",
 		align: "center"
 	};
-	var t2 = game.add.text(viewportWidth / 2 - 270, viewportHeight - 50, instructions, style2);
+	var t2 = game.add.text(viewportWidth / 2 - 200, viewportHeight - 50, instructions, style2);
 
 }
 
