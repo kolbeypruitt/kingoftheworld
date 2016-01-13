@@ -10,7 +10,6 @@ var explosions;
 var logo;
 var cursors;
 var fireButton;
-var bullets;
 var restartButton;
 var myId = 0;
 var viewportWidth = window.innerWidth * window.devicePixelRatio;
@@ -242,16 +241,6 @@ function Avatar1(myId, game, avatar, x, y) {
   this.avatar.body.checkCollision.down = false;
   this.avatar.body.bounce.setTo(1, 1);
 
-
-  // this.bullets = game.add.group();
-  // this.bullets.enableBody = true;
-  // this.bullets.physicsBodyType = Phaser.Physics.ARCADE;
-  // this.bullets.createMultiple(20, 'bullet1', 0, false);
-  // this.bullets.setAll('anchor.x', 0.5);
-  // this.bullets.setAll('anchor.y', 0.5);
-  // this.bullets.setAll('outOfBoundsKill', true);
-  // this.bullets.setAll('checkWorldBounds', true);
-  // Allow powerslide
   game.physics.arcade.velocityFromRotation(this.avatar.rotation, 0, this.avatar.body.velocity);
 }
 Avatar1.prototype = Object.create(Avatar.prototype);
@@ -400,16 +389,6 @@ function Avatar2(myId, game, avatar, x, y) {
   this.avatar.body.checkCollision.down = false;
   this.avatar.body.bounce.setTo(1, 1);
 
-
-  // this.bullets = game.add.group();
-  // this.bullets.enableBody = true;
-  // this.bullets.physicsBodyType = Phaser.Physics.ARCADE;
-  // this.bullets.createMultiple(20, 'bullet1', 0, false);
-  // this.bullets.setAll('anchor.x', 0.5);
-  // this.bullets.setAll('anchor.y', 0.5);
-  // this.bullets.setAll('outOfBoundsKill', true);
-  // this.bullets.setAll('checkWorldBounds', true);
-  // Allow powerslide
   game.physics.arcade.velocityFromRotation(this.avatar.rotation, 0, this.avatar.body.velocity);
 }
 Avatar2.prototype = Object.create(Avatar.prototype);
@@ -559,16 +538,6 @@ function Avatar3(myId, game, avatar, x, y) {
   this.avatar.body.checkCollision.down = false;
   this.avatar.body.bounce.setTo(1, 1);
 
-
-  // this.bullets = game.add.group();
-  // this.bullets.enableBody = true;
-  // this.bullets.physicsBodyType = Phaser.Physics.ARCADE;
-  // this.bullets.createMultiple(20, 'bullet1', 0, false);
-  // this.bullets.setAll('anchor.x', 0.5);
-  // this.bullets.setAll('anchor.y', 0.5);
-  // this.bullets.setAll('outOfBoundsKill', true);
-  // this.bullets.setAll('checkWorldBounds', true);
-  // Allow powerslide
   game.physics.arcade.velocityFromRotation(this.avatar.rotation, 0, this.avatar.body.velocity);
 }
 Avatar3.prototype = Object.create(Avatar.prototype);
@@ -680,11 +649,6 @@ Avatar3.prototype.update = function(avatarType) {
 };
 
 
-
-
-
-
-
 var game = new Phaser.Game(viewportWidth, viewportHeight, Phaser.AUTO, 'phaser-example', {
 	preload: preload,
 	create: eurecaClientSetup,
@@ -759,7 +723,6 @@ function create(avatarType, avatarString) {
 	avatar.x = game.world.randomX
 	avatar.y = game.world.randomY
 	avatar.bringToTop();
-	bullets = player.bullets;
 
 	//	Logo is in menu now
 	//=============================================================================	
@@ -855,7 +818,6 @@ function update() {
 
 	for (var i in avatarsList) {
 		if (!avatarsList[i]) continue;
-		var curBullets = avatarsList[i].bullets;
 		var curAvatar = avatarsList[i].avatar;
 		if (avatarsList[i].alive) avatarsList[i].update();
 		for (var j in avatarsList) {
@@ -863,23 +825,32 @@ function update() {
 			if (j != i) {
 
 				var targetAvatar = avatarsList[j].avatar;
-				// Destroying avatars on collision so collision detection not needed in this version
-				// game.physics.arcade.collide(curAvatar, targetAvatar);
+				game.physics.arcade.collide(curAvatar, targetAvatar);
 				if(game.physics.arcade.distanceBetween(curAvatar, targetAvatar) < 100) {
 					if (avatarsList[i].input.attack) {
 						if (!avatarsList[i].alive) return;
 
 						if (this.game.time.now > avatarsList[i].nextFire) {
-						  // game.add.audio('fire1').play()
 						  avatarsList[i].nextFire = this.game.time.now + avatarsList[i].fireRate;
-						  // Destroy the bullet after a certain time to limit range 
 						  avatarsList[j].health -= avatarsList[i].damage;
 						  console.log('enemy health ', avatarsList[j].health);
-						  // avatarsList[j].update();
-						  attackKilledPlayer(avatarsList[i], avatarsList[j]);
-						  // setTimeout(function() {
+              if (avatarsList[j].health <= 0) {
+                avatarsList[i].avatar.scale.setTo(1.5, 1.5);
+                avatarsList[i].health += 5;
+                avatarsList[i].damage += 1;
+                eurecaServer.deletePlayer(avatarsList[j].avatar.id);
+                    avatarsList[j].avatar.animations.play('die', 8, false, false).onComplete.add(function () {
+                      setTimeout(function() {
+                        eurecaServer.deletePlayer(avatarsList[j].avatar.id)
+                      }, 400)
+                      game.add.audio('die').play('', 0, 4);
+                    }, this);
+              }
+						  // attackKilledPlayer(avatarsList[i], avatarsList[j]);
+              avatarsList[j].update();
+						  setTimeout(function() {
 						  game.add.audio('slash').play('', 0, 0.7);
-						  // }, 400)
+						  }, 400)
 						}
 
 					}
@@ -894,23 +865,19 @@ function update() {
 	}
 }
 
-function attackKilledPlayer(curAvatar, targetAvatar) {
-	if (targetAvatar.health <= 0) {
-		// var explosionAnimation = explosions.getFirstExists(false);
-		// explosionAnimation.reset(targetAvatar.avatar.x, targetAvatar.avatar.y);
-		// explosionAnimation.play('kaboom', 30, false, true);
-
-		curAvatar.avatar.scale.setTo(1.5, 1.5);
-		curAvatar.health += 10;
-		curAvatar.damage += 5;
-		targetAvatar.avatar.animations.play('die', 8, false, false).onComplete.add(function () {
-      setTimeout(function() {
-      	eurecaServer.deletePlayer(targetAvatar.avatar.id)
-      }, 40)
-      game.add.audio('die').play('', 0, 4);
-    }, this);
-	}
-}
+// function attackKilledPlayer(curAvatar, targetAvatar) {
+	// if (targetAvatar.health <= 0) {
+		// curAvatar.avatar.scale.setTo(1.5, 1.5);
+		// curAvatar.health += 10;
+		// curAvatar.damage += 5;
+		// targetAvatar.avatar.animations.play('die', 8, false, false).onComplete.add(function () {
+  //     setTimeout(function() {
+  //     	eurecaServer.deletePlayer(targetAvatar.avatar.id)
+  //     }, 400)
+  //     game.add.audio('die').play('', 0, 4);
+  //   }, this);
+	// }
+// }
 
 // function bulletHitPlayer(avatar, bullet) {
 // 	bullet.kill();
@@ -970,16 +937,6 @@ function attackKilledPlayer(curAvatar, targetAvatar) {
 	// 	game.add.audio('avatardies').play('', 0, .7)
 	// }
 
-// }
-
-// function avatarsCollide(avatar, curAvatar) {
-// 	setTimeout(function() {
-// 		eurecaServer.deletePlayer(avatar.id)
-// 		var explosionAnimation = explosions.getFirstExists(false);
-// 		explosionAnimation.reset(avatar.x, avatar.y);
-// 		explosionAnimation.play('kaboom', 30, false, true);
-// 	}, 40)
-// 	game.add.audio('avatardies').play('', 0, .7)
 // }
 
 function restart() {
