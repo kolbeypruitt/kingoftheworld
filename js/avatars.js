@@ -363,15 +363,15 @@ function Avatar2(myId, game, avatar, x, y) {
   this.avatar.animations.add('off', [0], 20, true);
 
 
-  this.avatar.animations.add('walk_up', [59, 60, 61, 62, 63, 64, 65, 66, 67], 60, false, true);
+  this.avatar.animations.add('walk_up', [60, 61, 62, 63, 64, 65, 66, 67], 60, false, true);
   this.avatar.animations.add('walk_left', [69, 70, 71, 72, 73, 74, 75, 76], 60, false, true);
   this.avatar.animations.add('walk_down', [77, 78, 79, 80, 81, 82, 83, 84, 85], 60, false, true);
   this.avatar.animations.add('walk_right', [87, 88, 89, 90, 91, 92, 93, 94], 60, false, true);
 
   this.avatar.animations.add('attack_up', [178, 179, 180, 181, 182, 183], 60, false, true);
-  this.avatar.animations.add('attack_left', [184, 185, 186, 187, 188, 189], 60, false, true);
-  this.avatar.animations.add('attack_down', [190, 191, 192, 193, 194, 195], 60, false, true);
-  this.avatar.animations.add('attack_right', [196, 197, 198, 199, 200, 201], 60, false, true);
+  this.avatar.animations.add('attack_left', [187, 188, 189, 190, 191, 192], 60, false, true);
+  this.avatar.animations.add('attack_down', [195, 196, 197, 198, 199, 200], 60, false, true);
+  this.avatar.animations.add('attack_right', [203, 204, 205, 206, 207, 208], 60, false, true);
 
   this.avatar.animations.add('die', [172, 173, 174, 175, 176, 177], 60, false, true);
 
@@ -738,15 +738,15 @@ function create(avatarType, avatarString) {
 	cursors = game.input.keyboard.createCursorKeys();
 	fireButton = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
 
-	var health = "Health: " + player.health;
-	var style = {
-		font: "18px Arial",
-		fill: "#ddd"
-	};
-	avatar.h = game.add.text(10, 20, health, style);
-	avatar.h.fixedToCamera = true;
-
-
+	// var health = "Health: " + player.health;
+	// var style = {
+	// 	font: "18px Arial",
+	// 	fill: "#ddd"
+	// };
+  
+	// avatar.h = game.add.text(10, 20, health, style);
+	// avatar.h.fixedToCamera = true;
+ 
 	// setTimeout(removeLogo, 2000);
 	var keys = {
 		x: avatar.x,
