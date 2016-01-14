@@ -108,23 +108,23 @@ var eurecaClientSetup = function() {
 		console.log('SPAWN');
 
 		if (avatarsList[i]) {
-			console.log("Trying to create a avatar that already exists.")
+			// console.log("Trying to create a avatar that already exists.")
 		} else {
-			var shp;
+			var avtr;
 			// avatarType is a string passed to this function to identify
 			// what type of avatar needs to be created
 			switch (avatarType) {
 				case "avatar1":
-					shp = new Avatar1(i, game, avatar, x, y);
+					avtr = new Avatar1(i, game, avatar, x, y);
 					break;
 				case "avatar2":
-					shp = new Avatar2(i, game, avatar, x, y);
+					avtr = new Avatar2(i, game, avatar, x, y);
 					break;
 				case "avatar3":
-					shp = new Avatar3(i, game, avatar, x, y);
+					avtr = new Avatar3(i, game, avatar, x, y);
 					break;
 			}
-			avatarsList[i] = shp;
+			avatarsList[i] = avtr;
 			newLogin = true
 		}
 	}
@@ -141,16 +141,16 @@ var eurecaClientSetup = function() {
 			avatarsList[id].update(state.avatarType);
 		} else {
 			// This code not needed
-			// var shp;
+			// var avtr;
 			// switch(state.avatarType){
 			// 	case "avatar1":
-			// 		shp = new Avatar1(id, game, avatar, state.x, state.y);
+			// 		avtr = new Avatar1(id, game, avatar, state.x, state.y);
 			// 		break;
 			// 	case "avatar2":
-			// 		shp = new Avatar2(id, game, avatar, state.x, state.y);
+			// 		avtr = new Avatar2(id, game, avatar, state.x, state.y);
 			// 		break;
 			// }
-			// avatarsList[id] = shp;
+			// avatarsList[id] = avtr;
 			// newLogin = true
 		}
 	}
@@ -178,7 +178,7 @@ Avatar = function(index, game, player, x, y) {
 	this.game = game;
 	this.health;
 	this.player = player;
-	this.avatarType = ''
+	this.avatarType = '';
 
 
 	this.currentSpeed = 0;
