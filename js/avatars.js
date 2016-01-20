@@ -738,15 +738,17 @@ function create(avatarType, avatarString) {
 	cursors = game.input.keyboard.createCursorKeys();
 	fireButton = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
 
-	// var health = "Health: " + player.health;
-	// var style = {
-	// 	font: "18px Arial",
-	// 	fill: "#ddd"
-	// };
-  
-	// avatar.h = game.add.text(10, 20, health, style);
-	// avatar.h.fixedToCamera = true;
+	var health = "Health: " + player.health;
+	var style = {
+		font: "18px Arial",
+		fill: "#ddd"
+	};
+
+	avatar.h = game.add.text(10, 20, health, style);
+	avatar.h.fixedToCamera = true;
  
+  // scoreText.text = 'Score: ' + score;
+
 	// setTimeout(removeLogo, 2000);
 	var keys = {
 		x: avatar.x,

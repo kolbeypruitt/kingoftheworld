@@ -1,8 +1,11 @@
-var express = require('express')
-  , app = express(app)
-  , server = require('http').createServer(app);
+var express = require('express');
+var app = express(app);
+var server = require('http').createServer(app);
 var cors = require('cors');
 require('dotenv').load();
+
+var twilClient = require('twilio')(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
+
 // serve static files from the current directory
 app.use(express.static(__dirname));
 
@@ -25,7 +28,19 @@ app.set('port', (process.env.PORT || 3000));
 
 //detect client connection
 eurecaServer.onConnect(function (conn) {    
-    console.log('New Client id=%s ', conn.id, conn.remoteAddress);
+  console.log('New Client id=%s ', conn.id, conn.remoteAddress);
+
+  //Send an SMS text message
+  twilClient.sendMessage({
+      to:'+19182901127', // Any number Twilio can deliver to
+      from: '+19187314092', // A number you bought from Twilio and can use for outbound communication
+      body: 'Someone is playing your game, dude!' // body of the SMS message
+  }, function(err, responseData) {
+      if (!err) {
+        console.log(responseData.from);
+        console.log(responseData.body);
+      }
+  });
 	
 	//the getClient method provide a proxy allowing us to call remote client functions
     var remote = eurecaServer.getClient(conn.id);    
