@@ -35,11 +35,6 @@ eurecaServer.onConnect(function (conn) {
       to:'+19182901127', // Any number Twilio can deliver to
       from: '+19187314092', // A number you bought from Twilio and can use for outbound communication
       body: 'Someone is playing your game, dude!' // body of the SMS message
-  }, function(err, responseData) {
-      if (!err) {
-        console.log(responseData.from);
-        console.log(responseData.body);
-      }
   });
 	
 	//the getClient method provide a proxy allowing us to call remote client functions

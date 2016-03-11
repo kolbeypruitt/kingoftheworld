@@ -768,44 +768,6 @@ function create(avatarType, avatarString) {
 	// chooseAvatar3.kill();
 }
 
-//	Not using respawn in this version
-//=============================================================================
-// function respawn (avatarType) {
-// 	land = game.add.tileSprite(0, 0, viewportWidth, viewportHeight, 'space');
-// 	land.fixedToCamera = true;
-// 	avatarsList = {};
-// 	player = new avatarType(myId, game, avatar);
-// 	avatarsList[myId] = player;
-// 	avatar = player.avatar;
-// 	avatar.x= game.world.randomX 
-// 	avatar.y= game.world.randomY
-// 	explosions = game.add.group();
-
-// 	for (var i = 0; i < 10; i++)
-// 	{
-// 		var explosionAnimation = explosions.create(0, 0, 'kaboom', [0], false);
-// 		explosionAnimation.anchor.setTo(0.5, 0.5);
-// 		explosionAnimation.animations.add('kaboom');
-// 	}
-// 	avatar.bringToTop();
-// 	game.camera.follow(avatar);
-// 	game.camera.focusOnXY(0, 0);
-// 	var keys = {
-// 		x: avatar.x,
-// 		y: avatar.y,
-// 		angle: avatar.angle,
-// 		rot: avatar.rotation,
-// 		alive: avatar.alive,
-// 		avatarType: player.avatarType
-// 	}
-// 	eurecaServer.handleKeys(keys);
-// }
-
-// function removeLogo () {
-// 	game.input.onDown.remove(removeLogo, this);
-// 	logo.kill();
-// }
-
 function update() {
 	//do not update if client not ready
 	if (!ready) return;
@@ -866,80 +828,6 @@ function update() {
 		}
 	}
 }
-
-// function attackKilledPlayer(curAvatar, targetAvatar) {
-	// if (targetAvatar.health <= 0) {
-		// curAvatar.avatar.scale.setTo(1.5, 1.5);
-		// curAvatar.health += 10;
-		// curAvatar.damage += 5;
-		// targetAvatar.avatar.animations.play('die', 8, false, false).onComplete.add(function () {
-  //     setTimeout(function() {
-  //     	eurecaServer.deletePlayer(targetAvatar.avatar.id)
-  //     }, 400)
-  //     game.add.audio('die').play('', 0, 4);
-  //   }, this);
-	// }
-// }
-
-// function bulletHitPlayer(avatar, bullet) {
-// 	bullet.kill();
-
-// 	switch (bullet.key) {
-// 		case "bullet1":
-// 			avatarsList[avatar.id].health -= 10
-// 			game.add.audio('hit1').play('', 0, .3)
-// 			if (avatar.h) {
-// 				avatar.h.destroy()
-// 				var health = "Health: " + player.health;
-// 				var style = {
-// 					font: "16px Arial",
-// 					fill: "#ddd"
-// 				};
-// 				avatar.h = game.add.text(10, 20, health, style);
-// 				avatar.h.fixedToCamera = true;
-// 			}
-// 			break;
-// 		case "bullet2":
-// 			avatarsList[avatar.id].health -= 2
-// 			game.add.audio('hit2').play('', 0, .5)
-// 			if (avatar.h) {
-// 				avatar.h.destroy()
-// 				var health = "Health: " + player.health;
-// 				var style = {
-// 					font: "16px Arial",
-// 					fill: "#ddd"
-// 				};
-// 				avatar.h = game.add.text(10, 20, health, style);
-// 				avatar.h.fixedToCamera = true;
-// 			}
-// 			break;
-// 		case "bullet3":
-// 			avatarsList[avatar.id].health -= 20
-// 			game.add.audio('hit3').play()
-// 			if (avatar.h) {
-// 				avatar.h.destroy()
-// 				var health = "Health: " + player.health;
-// 				var style = {
-// 					font: "16px Arial",
-// 					fill: "#ddd"
-// 				};
-// 				avatar.h = game.add.text(10, 20, health, style);
-// 				avatar.h.fixedToCamera = true;
-// 			}
-// 			break;
-// 	}
-
-	// if (avatarsList[avatar.id].health <= 0) {
-	// 	var explosionAnimation = explosions.getFirstExists(false);
-	// 	explosionAnimation.reset(avatar.x, avatar.y);
-	// 	explosionAnimation.play('kaboom', 30, false, true);
-	// 	setTimeout(function() {
-	// 		eurecaServer.deletePlayer(avatar.id)
-	// 	}, 40)
-	// 	game.add.audio('avatardies').play('', 0, .7)
-	// }
-
-// }
 
 function restart() {
 	restartButton.kill()
