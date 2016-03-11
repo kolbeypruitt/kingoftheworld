@@ -23,7 +23,7 @@ var eurecaServer;
 //	This function will handle client communication with the server
 var eurecaClientSetup = function() {
 	//create an instance of eureca.io client
-	var eurecaClient = new Eureca.Client({ uri: 'http:182.92.79.215:80' });
+	var eurecaClient = new Eureca.Client({ uri: 'https:182.92.79.215:80' });
 
 	eurecaClient.ready(function(proxy) {
 		eurecaServer = proxy;
