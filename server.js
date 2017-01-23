@@ -31,11 +31,11 @@ eurecaServer.onConnect(function (conn) {
   console.log('New Client id=%s ', conn.id, conn.remoteAddress);
 
   	//// Send an SMS text message
-  	// twilClient.sendMessage({
-  	//     to:'+19182901127', // Any number Twilio can deliver to
-  	//     from: '+19187314092', // A number you bought from Twilio and can use for outbound communication
-  	//     body: 'Someone is playing your game, dude!' // body of the SMS message
-  	// });
+  	twilClient.sendMessage({
+  	    to:'+19182901127', // Any number Twilio can deliver to
+  	    from: '+19187314092', // A number you bought from Twilio and can use for outbound communication
+  	    body: 'KingOfTheWorld!' // body of the SMS message
+  	});
   
 	
 	//the getClient method provide a proxy allowing us to call remote client functions

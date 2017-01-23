@@ -53,7 +53,9 @@ var eurecaClientSetup = function() {
 			// setTimeout lets the other kill get registered if the last two avatars collide
 			setTimeout(function() {
 					if (Object.keys(avatarsList).length === 1) {
-						if (avatarsList[avatar.id].alive) {
+            console.log('avatarList', avatarsList);
+            console.log('avatarId', avatar.id);
+						if (avatarsList[avatar.id] && avatarsList[avatar.id].alive) {
 							var style = {
 								font: "48px Arial",
 								fill: "#0f0"
@@ -95,11 +97,20 @@ var eurecaClientSetup = function() {
 				    }
 					}
 				}, 1)
+
 				// Adds restart button on death, not used in this version
-				// if(id === avatar.id){
-				// 	restartButton = game.add.button(200, 200, 'restart', restart, this);
-				// 	restartButton.fixedToCamera = true
-				// }
+				if(id === avatar.id){
+					restartButton = game.add.button(viewportWidth / 2 - 120, viewportHeight / 2 + 100, 'restart', restart, this);
+					restartButton.fixedToCamera = true
+				}
+
+
+      // var restart = game.add.button(
+      //   viewportWidth / 4 - 150, 400,
+      //   'restart',
+      //   create.bind(this, Avatar1, 'avatar1')
+      //   );
+
 		}
 	}
 
@@ -676,7 +687,8 @@ function preload() {
 	game.load.atlasJSONHash('martin', 'assets/martin.png', 'assets/martin.json');
 	game.load.spritesheet('martinBtn', 'assets/martinBtn.png')
 	game.load.image('logo', 'assets/logo.png');
-	game.load.image('grass', 'assets/grass.png');
+  game.load.image('grass', 'assets/grass.png');
+  game.load.image('restart', 'assets/restart.png');
 }
 
 function menu() {
@@ -690,9 +702,23 @@ function menu() {
 	};
 	var t1 = game.add.text(viewportWidth / 4 - 150, 300, choose, style);
 
-	var chooseAvatar1 = game.add.button(viewportWidth / 4 - 150, 400, 'marvinBtn', create.bind(this, Avatar1, 'avatar1'));
-	var chooseAvatar2 = game.add.button(viewportWidth / 4 - 50, 400, 'mariahBtn', create.bind(this, Avatar2, 'avatar2'));
-	var chooseAvatar3 = game.add.button(viewportWidth / 4 + 100, 400, 'martinBtn', create.bind(this, Avatar3, 'avatar3'));
+  var chooseAvatar1 = game.add.button(
+    viewportWidth / 4 - 200, 400,
+    'marvinBtn',
+    create.bind(this, Avatar1, 'avatar1')
+    );
+
+	var chooseAvatar2 = game.add.button(
+    viewportWidth / 4 - 50, 400,
+    'mariahBtn',
+    create.bind(this, Avatar2, 'avatar2')
+    );
+
+	var chooseAvatar3 = game.add.button(
+    viewportWidth / 4 + 100, 400,
+    'martinBtn',
+    create.bind(this, Avatar3, 'avatar3')
+    );
 
 	var instructions = "Arrow keys to move, spacebar to attack";
 	var style2 = {
@@ -827,6 +853,10 @@ function update() {
 			}
 		}
 	}
+}
+
+function respawn() {
+eurecaClientSetup()
 }
 
 function restart() {
